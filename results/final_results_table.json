@@ -1,0 +1,32 @@
+{
+  "supervised": {
+    "sae_final_loss": 0.00013446955640877907,
+    "n_alive_features": 59,
+    "mean_purity": 0.8983050847457625,
+    "mean_entropy": 0.20465238162755078,
+    "downstream_probe_accuracy": 0.8609535811804243,
+    "spatial_dice": 0.010655575355715884,
+    "best_feature_idx": 35,
+    "best_feature_purity": 1.0
+  },
+  "simclr": {
+    "sae_final_loss": 0.0014782277106617887,
+    "n_alive_features": 499,
+    "mean_purity": 0.7955689156089959,
+    "mean_entropy": 0.43874693704182394,
+    "downstream_probe_accuracy": 0.8653644192396556,
+    "spatial_dice": 0.2857142853061225,
+    "best_feature_idx": 0,
+    "best_feature_purity": 1.0
+  },
+  "ncl": {
+    "sae_final_loss": 6.220397141684467e-05,
+    "n_alive_features": 44,
+    "mean_purity": 0.8431818181818184,
+    "mean_entropy": 0.3294952119516055,
+    "downstream_probe_accuracy": 0.8767065742491074,
+    "spatial_dice": 0.17475506932574839,
+    "best_feature_idx": 232,
+    "best_feature_purity": 1.0
+  }
+}
