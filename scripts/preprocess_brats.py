@@ -33,8 +33,9 @@ from sklearn.model_selection import train_test_split
 import csv
 
 # ==================== CONFIG ====================
-DATA_ROOT = r"research\brain-mri-ncl-simclr\dataset\BraTS2020_TrainingData\MICCAI_BraTS2020_TrainingData"   # <-- YE BADALO apne actual path se
-OUTPUT_DIR = r"research\brain-mri-ncl-simclr"   # <-- YE BHI BADALO
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_ROOT = PROJECT_ROOT / "dataset/BraTS2020_TrainingData/MICCAI_BraTS2020_TrainingData"
+OUTPUT_DIR = PROJECT_ROOT / "data/processed_flair"
 
 IMG_SIZE = 128                  # slices ko is size pe resize karenge (128x128)
 MIN_BRAIN_PIXEL_FRACTION = 0.02  # slice mein kam se kam itna % brain tissue hona chahiye
@@ -63,10 +64,16 @@ def load_patient_volumes(patient_dir):
     """Ek patient ke FLAIR aur segmentation volume load karo."""
     flair_path = glob.glob(os.path.join(patient_dir, "*_flair.nii*"))[0]
     seg_candidates = glob.glob(os.path.join(patient_dir, "*_seg.nii*"))
-    seg_path = seg_candidates[0] if seg_candidates else None
+    if len(seg_candidates) != 1:
+        raise ValueError(f"Require exactly one segmentation volume: {patient_dir}")
+    seg_path = seg_candidates[0]
 
     flair = nib.load(flair_path).get_fdata()
-    seg = nib.load(seg_path).get_fdata() if seg_path else np.zeros_like(flair)
+    seg = nib.load(seg_path).get_fdata()
+    if flair.shape != seg.shape:
+        raise ValueError(f"FLAIR/segmentation shape mismatch: {patient_dir}")
+    if not np.allclose(nib.load(flair_path).affine, nib.load(seg_path).affine):
+        raise ValueError(f"FLAIR/segmentation affine mismatch: {patient_dir}")
     return flair, seg
 
 
@@ -135,6 +142,8 @@ def process_patient(patient_dir, out_dir, patient_id):
 
 
 def main():
+    if (OUTPUT_DIR / "metadata.csv").exists():
+        raise FileExistsError("Processed metadata already exists; choose a new OUTPUT_DIR to regenerate safely")
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     patient_dirs = find_patient_dirs(DATA_ROOT)
