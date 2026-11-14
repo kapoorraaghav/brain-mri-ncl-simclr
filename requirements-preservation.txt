@@ -1,0 +1,10 @@
+numpy>=1.26,<3
+pandas>=2,<4
+scipy>=1.11
+scikit-learn>=1.5,<2
+torch>=2.7
+torchvision>=0.22
+timm>=1,<2
+threadpoolctl>=3
+marimo>=0.24,<1
+huggingface-hub>=0.34,<3
