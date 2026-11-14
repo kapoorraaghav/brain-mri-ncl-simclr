@@ -1,0 +1,51 @@
+{
+  "experiment_name": "brats2023_expansion_v1",
+  "encoder_seeds": [
+    10,
+    42,
+    52
+  ],
+  "sae_seeds": [
+    10,
+    42,
+    52
+  ],
+  "modes": [
+    "ncl",
+    "simclr",
+    "supervised"
+  ],
+  "metadata": "data/processed_flair_brats2023_expansion_v1/metadata.csv",
+  "output": "results/brats2023_expansion_v1",
+  "img_size": 128,
+  "batch_size": 64,
+  "encoder_epochs": 50,
+  "encoder_lr": 0.0005,
+  "weight_decay": 0.01,
+  "temperature": 0.5,
+  "sae_epochs": 30,
+  "sae_batch_size": 512,
+  "sae_lr": 0.0005,
+  "dictionary_size": 1536,
+  "sae_k": 24,
+  "sae_variants": [
+    "baseline",
+    "auxk"
+  ],
+  "token_spaces": [
+    "cls",
+    "patch"
+  ],
+  "train_patch_slice_limit": 2048,
+  "auxk": 96,
+  "aux_weight": 0.03125,
+  "dead_after_samples": 138399,
+  "top_m": 10,
+  "permutations": 100,
+  "bootstrap_repeats": 2000,
+  "selectivity_bootstrap_repeats": 200,
+  "spatial_samples": 128,
+  "spatial_percentile": 75,
+  "tumor_patch_fraction": 0.1,
+  "num_workers": 0
+}
