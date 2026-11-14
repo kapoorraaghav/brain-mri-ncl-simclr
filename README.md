@@ -1,131 +1,125 @@
-# NCL + SAE for Interpretable Brain MRI Representations
+# Auditing Feature Populations and Label Selectivity in Brain MRI
 
-Research project investigating whether Non-Negative Contrastive Learning (NCL) produces more interpretable representations than standard contrastive learning (SimCLR) on brain MRI, using Sparse Autoencoders (SAE) to decode and quantify feature interpretability.
+Code and aggregate results for a controlled empirical study of sparse autoencoders
+(SAEs) on NCL and SimCLR brain-MRI representations. This is a research draft, not
+an accepted paper or a clinical diagnostic tool. The contribution is the empirical
+selectivity-utility trade-off, not a new NCL or SAE algorithm.
 
-**Author:** Raaghav Kapoor, B.Tech IT, MAIT Delhi
-**Target venue:** ML/interpretability workshop (open, no fixed deadline)
-**Dataset:** BraTS 2020 (FLAIR modality)
+## Current findings and paper
 
----
+This repository contains the earlier geometry/control experiments and the later
+feature-population audit. The current manuscript is `paper/current/main.pdf`;
+its LaTeX, 20-reference bibliography and figures are in the same directory.
+The October synthesis in the other `paper/` files is retained as historical
+context, not the current manuscript or its final claim wording.
 
-## Problem
+NCL's all-eligible raw purity lead is 4.11 percentage points. At J=8 its
+usage-ranked galleries are less pure than SimCLR's (gap -8.19 points;
+conditional patient resampling envelope [-12.50, -1.25]). Mean comparisons
+depend on feature budget; larger-budget envelopes span zero. At J=64,
+usage-ranked purity is 0.98 points below NCL's random-subset mean and 3.25
+points above SimCLR's. The stratified context reference removes a stable
+NCL lead. Native and full-code probes favor SimCLR; selected-code probes
+favor NCL. These are exploratory results on the reused validation cohort,
+not independent patient confirmation, a causal geometry finding or a
+demonstration of clinical interpretability.
 
-Deep learning models detect brain tumors accurately but can't explain what they see — internal representations are entangled (a single dimension can encode tumor boundary, skull shape, and noise simultaneously via subtraction). This blocks clinical trust.
+See `docs/FEATURE_POPULATION_AUDIT.md` and
+`results/feature_population_audit_v1/` for the latest audit procedures and
+aggregate results. `scripts/feature_population_audit.py` and the accompanying
+verification, sensitivity and bootstrap scripts implement those analyses.
+`notebooks/32_feature_population_audit.ipynb` provides their notebook entry point.
 
-## Approach
+## Setup
 
-1. **NCL** — a one-line change to SimCLR (add ReLU to the final projection layer) that bans negative values, removing the subtraction shortcut that causes entangled features.
-2. **SAE** — trained on frozen backbone representations after contrastive/supervised training, decomposes them into sparse, individually-inspectable features.
-3. **Compare** Supervised, SimCLR, and NCL backbones on how monosemantic (interpretable) their SAE features are.
-
-See `pipeline_diagram.svg` / `pipeline_diagram.png` for the full architecture (all three branches, backbone → projection head → contrastive loss, and separately backbone → frozen representation → SAE).
-
----
-
-## Repository Structure
-
-```
-.
-├── 01_data_preprocessing.ipynb     # BraTS2020 NIfTI -> 2D FLAIR slices, patient-level split, labels
-├── train_supervised.ipynb          # Supervised ViT-Tiny baseline (not shown here, same pattern as train_ncl)
-├── train_simclr.ipynb              # SimCLR contrastive pretraining
-├── train_ncl.ipynb                 # NCL contrastive pretraining (ReLU-constrained projector)
-├── sae_supervised.ipynb            # SAE trained on frozen supervised representations
-├── sae_simclr.ipynb                # SAE trained on frozen SimCLR representations
-├── sae_ncl.ipynb                   # SAE trained on frozen NCL representations
-├── results_summary.ipynb           # Loads final_results_table.json, builds comparison charts
-├── generate_results_json.py        # Auto-generates results_template.json from training/eval outputs
-├── results_template.json           # Consolidated results (metrics, backbone status, SAE stats)
-├── pipeline_diagram.svg / .png     # Architecture diagram (editable SVG + rendered PNG)
-├── NCL_SAE_Brain_MRI_Draft.docx    # Paper draft (Word)
-├── NCL_SAE_Brain_MRI_Draft.pdf     # Paper draft (PDF)
-└── README.md                       # This file
-```
-
----
-
-## Pipeline
-
-```
-BraTS 2020 FLAIR slice
-        │
-        ├── Supervised: ViT-Tiny → Classification Head (cross-entropy)
-        │
-        ├── SimCLR: 2 augmented views → shared ViT-Tiny → Projection Head (unconstrained)
-        │            → contrastive loss (training only)
-        │
-        └── NCL: 2 augmented views → shared ViT-Tiny → Projection Head (+ReLU, non-negative)
-                     → contrastive loss (training only)
-
-For all three:
-    Backbone output (frozen after training) → Sparse Autoencoder (TopK)
-        → top-10 activating MRI slices per feature → Monosemanticity Check (Purity / Entropy)
-```
-
-## Data
-
-- **Dataset:** BraTS 2020, ~370 patients, FLAIR modality (attach via Kaggle: `awsaf49/brats20-dataset-training-validation` or similar).
-- **Split:** patient-level 70/15/15 (train/val/test) — no slice leakage across splits.
-- **Preprocessing:** 2D axial slice extraction, percentile normalization, resize to 128×128, empty-slice filtering.
-- **Labels:** per-slice dominant tumor sub-region (necrotic core / edema / enhancing tumor / non-tumor) from BraTS segmentation masks — used later for the monosemanticity metric, not for NCL/SimCLR training itself.
-
-## Training
-
-- **Backbone:** ViT-Tiny (identical across all three models for a fair comparison)
-- **Hardware:** free-tier GPU sufficient — Kaggle T4×2 or a local RTX 5060 8GB
-- **Batch size:** 64 | **LR:** 3e-4 | **Temperature:** 0.5 | **Epochs:** 25 | **Seed:** 42
-- **Projector:** `Linear(192→192) → BatchNorm → ReLU → Linear(192→128)` (+ final ReLU for NCL)
-  - BatchNorm in the projector was a required fix — without it, NCL's non-negativity constraint made representation collapse (loss flatlining at `ln(2×batch_size−1)`, the mathematical signature of all embeddings mapping to one point) much more likely than for SimCLR.
-
-## Evaluation Metrics
-
-| Metric | Description |
-|---|---|
-| **Monosemanticity purity** | Mean fraction of an SAE feature's top-10 activating slices sharing the same dominant BraTS label |
-| **Monosemanticity entropy** | Entropy of labels within an SAE feature's top-10 set (lower = more monosemantic) |
-| **Downstream probe accuracy** | Linear probe on frozen representations, tumor vs. non-tumor |
-| **Spatial Dice (ablation)** | Overlap of high-activation patches with the tumor mask |
-
-## Results (latest run)
-
-| Metric | Supervised | SimCLR | NCL |
-|---|---|---|---|
-| Monosemanticity purity | 0.898 | 0.796 | 0.843 |
-| Monosemanticity entropy | 0.205 | 0.439 | 0.329 |
-| Downstream probe accuracy | 0.861 | 0.865 | **0.877** |
-| Spatial Dice | 0.011 | 0.286 | 0.175 |
-| Alive SAE features | 59 | 499 | 44 |
-
-Full machine-readable results (including SAE loss, best feature index, training config) are in `results_template.json` — regenerate it any time with:
+Use Python 3.11 or newer. Install PyTorch appropriate to your hardware following
+its official instructions, then install the analysis dependencies:
 
 ```bash
-python generate_results_json.py
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python scripts/run_embedding_experiment.py --help
+python scripts/run_embedding_experiment.py --stage probe --dry-run
 ```
 
-**Takeaway so far:** NCL beats SimCLR on both interpretability metrics (purity and entropy) while also getting the best downstream probe accuracy of the three — the interpretability gain doesn't come at an accuracy cost. Supervised still edges out NCL on raw monosemanticity, which is expected since it uses label information directly during training.
+Training/preprocessing/Molab extras: `python -m pip install -r requirements-training.txt`.
+Use a CUDA GPU for SAE training; CPU is sufficient for logistic probes. Compatibility
+ranges are provided, not a guaranteed cross-platform lockfile. Recorded final
+probe environment: Python 3.13.11, torch 2.11.0+cu130, NumPy 2.4.6, pandas 3.0.3,
+scikit-learn 1.9.0. Small source/refit differences from historical probes are
+disclosed in the paper evidence.
 
----
+## Inputs and data access
 
-## Reproducing
+This release does not include raw MRI datasets, embeddings, model archives or private storage
+locations. Obtain authorized BraTS-derived inputs under their applicable terms.
+Exact result reproduction needs the original identity-checked embedding bundle
+`data/rank_control_embeddings_v1.zip`. Its SHA256 is recorded in `configs/`.
+Patient-bootstrap/feature-stability reproduction additionally needs the completed
+36-model AuxK archive; its filename/checksum are in the second receipt. Providing
+a different dataset is a new experiment, not reproduction of the published values.
+See `data/README.md` and `docs/WORKFLOW.md`.
 
-1. Run `01_data_preprocessing.ipynb` (produces `slices/`, `manifest.csv`, `split.json`)
-2. Run `train_supervised.ipynb`, `train_simclr.ipynb`, `train_ncl.ipynb` (each saves a checkpoint + `<mode>_history.json`)
-3. Run `sae_supervised.ipynb`, `sae_simclr.ipynb`, `sae_ncl.ipynb` (each writes into `final_results_table.json`)
-4. Run `python generate_results_json.py` to consolidate everything into `results_template.json`
-5. Run `results_summary.ipynb` to generate comparison charts and the qualitative top-10 activation grid
-6. Update `NCL_SAE_Brain_MRI_Draft.docx` Section 7 with the final numbers
+For Molab, import notebooks 21-25, set your own HF repository in the UI and set
+read-only `HF_TOKEN` in runtime secrets. No token is embedded in this repository.
+The placeholder `YOUR_USERNAME/YOUR_PRIVATE_DATASET` must be replaced by your own
+authorized source. Local source mode is also supported. Do not upload data/model
+archives to GitHub. Preserve result ZIPs before closing cloud runtimes.
 
-## Known Limitations
+## Embedding experiment CLI
 
-- NCL only blocks the *subtraction* shortcut — weakly-correlated concepts can still share a dimension, so full disentanglement isn't guaranteed.
-- No radiologist validation yet; monosemanticity is judged only by automated purity/entropy against BraTS labels.
-- Single modality (FLAIR); T1/T2/DWI extension left for future work.
-- Dataset size (~370 patients) is modest — generalization to other scanners/cohorts untested.
+```bash
+python scripts/run_embedding_experiment.py --stage rank --bundle data/rank_control_embeddings_v1.zip --encoder-seeds 10 --output results/rank_v1
+python scripts/run_embedding_experiment.py --stage auxk --bundle data/rank_control_embeddings_v1.zip --encoder-seeds 10 --output results/auxk_v1
+python scripts/run_embedding_experiment.py --stage retention --bundle data/rank_control_embeddings_v1.zip --encoder-seeds 10 --output results/retention_v1
+python scripts/run_embedding_experiment.py --stage patient --bundle data/rank_control_embeddings_v1.zip --models data/auxk_native_controls_v1_enc10-42-52_ALL_RESULTS.zip --output results/patient_v1
+python scripts/run_embedding_experiment.py --stage probe --bundle data/rank_control_embeddings_v1.zip --output results/probe_v1
+```
 
-## References
+Full plans: rank 54 SAE fits; AuxK 36; retention 36; patient analysis 36 saved models;
+probe 30 small fits. Defaults select all three encoder seeds. For split sessions,
+run 10, then 42, then 52 in the same output directory when storage persists. SAE
+stages save a final dictionary once per completed fit, without per-epoch recovery.
+Incomplete fits restart. Stop/time budgets are checked between completed units.
+CLI export writes a ZIP; result folders have immutable input/plan/code registration.
 
-- Chen et al. (2020), SimCLR — arXiv:2002.05709
-- Wang et al. (2024), NCL — arXiv:2403.12459
-- Bricken et al. (2023), Towards Monosemanticity — transformer-circuits.pub/2023/monosemantic-features
-- Wang et al. (2024), Beyond Interpretability — arXiv:2410.21331
-- Menze et al., BraTS 2020 Dataset — Kaggle / Synapse
+## Repository map
+
+- `src/`: exact core runtime and appended experiment-specific extensions.
+- `notebooks/21-25`: self-contained Molab and local Jupyter workflows.
+- `notebooks/historical_training/`: the nine exact historical training workflows,
+  with only storage configuration sanitized. Despite their filenames, these
+  versions **did not retain encoder/SAE weights**. They are not recommended as a
+  new checkpointed training interface; read the workflow notes first.
+- `notebooks/13b...`: provenance-specific patient-grouped preprocessing. It needs
+  the original mapping and earlier split/metadata inputs; not a one-click raw-data recipe.
+- `scripts/revision_experiments.py`: general earlier checkpointed CLI; its defaults
+  are not a guarantee of the historical Molab setup. Do not substitute it silently.
+- `results/aggregated`: non-patient-level numeric results; `paper/`: figures/tables.
+- `tests/`: synthetic functional checks, not full experiments; `.github/`: CI recipe.
+
+## Evidence limits
+
+Training: 1,059 patient groups / 138,399 slices. Evaluation: 37 previously inspected
+validation patients / 4,761 slices, also used for encoder checkpoint selection.
+The same 37 registered test patients were evaluated with earlier models; they are
+not fresh confirmation. No expanded-model test results are reported.
+Historical expanded-run encoder weights are unavailable. Separate preserved reruns
+retain their own encoders and SAE states; they do not replace the historical vectors.
+See `docs/PRESERVED_REPRODUCTION.md`. Saved embeddings and SAE states support downstream
+analysis, not original image-to-embedding inference or full model reproduction.
+The local `dai_analysis_reproduction_20261029` package additionally contains
+checksummed analysis inputs, training-only feature-selection code, and expected
+summaries. Its verification and full 18-dictionary selection rerun passed.
+No verified external-generalization or clinical claim is made.
+SAE seeds are nested within encoder; patient intervals condition on fixed models.
+Do not treat slices, dictionary units, repeated baselines or matching pairs as
+independent patient samples. Supervised is an original-run reference, not a new
+matched F1/AUROC evaluation in notebook 25.
+
+## GitHub upload
+
+Extract this directory, review `PUBLICATION_NOTES.md`, then create a GitHub repository
+and use the commands in `GITHUB_PUSH.md`. No remote repository is created or pushed
+by this ZIP. A GitHub Actions recipe is supplied, but it has not been run on GitHub.
+No project license is assumed; see `LICENSE_NOTICE.md`.
