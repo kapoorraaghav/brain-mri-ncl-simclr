@@ -1,0 +1,40 @@
+# Credentials and private local settings
+.env
+.env.*
+!.env.example
+*credentials*.json
+*token*.json
+# Inputs, models, generated archives and caches
+data/**
+!data/README.md
+dataset/
+datasets/
+checkpoints/
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.safetensors
+*.npz
+*.npy
+*.nii
+*.nii.gz
+*.zip
+results/**
+!results/aggregated/
+!results/aggregated/**
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
+__marimo__/
+.marimo/
+.DS_Store
+Thumbs.db
+tmp/
+
+# Public aggregate outputs from the feature-population audit
+!results/feature_population_audit_v1/
+!results/feature_population_audit_v1/**
