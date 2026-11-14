@@ -1,7 +1,15 @@
 # Citation
 
-Working title: Representation Geometry and Sparse Autoencoder Feature Selectivity
-in Brain MRI. Research draft, 2026. An author-approved author list, venue, URL or
-DOI has not been supplied; no bibliographic identity is fabricated. Update this
-file after those details are finalized. Related primary references are in
-paper/related_work.bib and docs/rank_sae_related_work.bib.
+Raaghav Kapoor. 2026. *Auditing Feature Populations and Label Selectivity in
+Brain MRI*. Unpublished research draft.
+
+The study audits label-selectivity comparisons between NCL, SimCLR and a
+supervised reference. It does not introduce NCL or a new sparse-autoencoder
+architecture. No venue acceptance, proceedings publication or DOI is claimed.
+
+The current manuscript source and its dataset bibliography are assigned to a
+later publication batch under `paper/current/`. Until that batch is published,
+this title identifies the local draft rather than an available repository PDF.
+
+Dataset and prior-method citations remain separate from attribution for this
+project. Consult the applicable BraTS release terms before using its data.
