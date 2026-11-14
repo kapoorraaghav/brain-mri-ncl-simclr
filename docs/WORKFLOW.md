@@ -1,32 +1,77 @@
-# Stage order and what is saved
+# Workflow map and input provenance
 
-1. Obtain authorized processed data/embeddings. Preserve patient-group splits and
-   the original mapping/provenance; do not fabricate the missing older inputs.
-2. Historical training notebooks 20 document the original nine runs. They embed
-   their runners and need no src imports. Their misleading checkpointed filenames
-   are retained for traceability: no encoder weights survive those runs. For new
-   image-based evaluation, a separately registered encoder run must save final
-   weights. No silent training persistence changes were made to this public copy.
-3. Notebook 21: native/rank-8/spectrum controls. NCL PCA and matched spectra
-   coincide; they are not independent confirmations.
-4. Notebook 22: matched native baseline/AuxK, not the full Gao recipe.
-5. Notebook 23: paired patient bootstrap and train-matched feature stability. Uses
-   saved AuxK/baseline weights, no retraining. Requires 37 validation patients for
-   the reported cohort; thresholds and counts are explicit in the protocol.
-6. Notebook 24: >=95% and >=99% train-variance PCA controls. Dimensions differ;
-   variance retention does not match predictive information.
-7. Notebook 25: refit small raw-embedding probes and evaluate all five conditions.
-   It is not SAE-code evaluation, and AuxK does not change the input embeddings.
+This map distinguishes historical analyses from preservation reruns and the
+current feature-population audit. It describes the full planned release; only
+the first batch is currently published. Planned paths are not yet runnable.
 
-Current stages 21/22/24 save one final SAE model per completed fit; there is no
-incomplete-epoch checkpoint recovery. Historical notebooks 20 are different and
-save no final encoder weights. Always export whole result ZIPs before closing
-ephemeral runtimes. Probes save predictions/probabilities and parameters; analysis
-exports retain bootstrap replicates and matches.
+## Available in the first batch
 
-The supplied core src runtimes use appended extensions, not subclasses: the
-stage runner concatenates base+extension and sets a runtime SHA256. This preserves
-the original experiment implementation. Do not edit registered code/settings and
-reuse an old output folder. A new implementation is a new protocol/output path.
+1. **Preprocessing:** `notebooks/13b_brats2023_preprocessing_fixed.ipynb` documents
+   the patient-grouped BraTS expansion. It requires authorized images, original
+   overlap mappings and earlier split metadata that are not distributed. Review
+   its configuration; it is not a one-click recipe from an arbitrary dataset.
+2. **Historical training:** the nine `notebooks/historical_training/20_*` files
+   archive seeds 10, 42 and 52 for NCL, SimCLR and supervised training. They
+   require the trusted indexed PKL format. Their filenames do not imply that the
+   historical encoder weights survived. Use a later preserved workflow for new
+   runs requiring image-level inference reproduction.
+3. **General CLI:** `scripts/revision_experiments.py` is an earlier training
+   interface. Its adjacent JSON settings are historical configurations, not a
+   guarantee of the final notebook setup. The expanded configuration includes
+   earlier AuxK and patch settings; do not substitute it silently.
+4. **Embedding stage wrapper:** `scripts/run_embedding_experiment.py` supports
+   help and dry-run now. It combines the shared runtime with stage-specific
+   extensions and registers a runtime checksum. Full execution additionally
+   needs the input receipts and extensions assigned to the second batch.
 
-The two JSON files beside revision_experiments.py are historical settings (including earlier AuxK=96 and patch experiments), NOT the final notebook-22 AuxK=192 plan. The current stage runner and notebooks define their own registered plans.
+```bash
+python scripts/run_embedding_experiment.py --stage rank --dry-run
+python scripts/run_embedding_experiment.py --stage probe --dry-run
+```
+
+These commands do not load patient data, train a model or verify reproduction.
+
+## Planned preserved training and earlier controls: batch 2
+
+- `notebooks/30_ncl_*` and `30_simclr_*` preserve separate encoder runs.
+  `notebooks/31_restore_preserved_saes_molab.py` restores matching SAE analysis.
+  Use authorized PKLs and preserved exports. These models are a separate family,
+  not replacements for the missing historical encoder states.
+- Notebook 21 runs native, rank and spectrum controls. Notebook 22 compares
+  native baseline and an adapted AuxK intervention, not the full Gao recipe.
+- Notebook 23 evaluates patient bootstrap and feature stability from completed
+  baseline/AuxK states. It needs both the historical embedding bundle and the
+  completed AuxK model archive.
+- Notebook 24 uses training-fitted retained-variance PCA controls. Matching
+  retained variance does not match dimensions or predictive information.
+- Notebook 25 fits raw-embedding probes, not SAE-code probes. It requires the
+  identity-checked embedding bundle; AuxK does not modify those embeddings.
+
+The exact embedding and model identities are recorded in the receipt JSON files
+assigned to batch 2. Do not invent replacement receipts for a different archive.
+
+## Planned current feature-population audit: batches 2 and 3
+
+The notebook 32 entry point and `scripts/feature_population_audit.py` use
+historical embeddings, matching SAE states and private per-slice validation
+covariates. The supervised SAE reference is fitted to archived supervised
+vectors, not a newly trained supervised encoder. Batch 3 adds the conditional
+null controls, patient-resampling scripts and saved aggregate summaries.
+
+`work/reviewer_sae_code_probes.py`, also assigned to batch 3, fits predictive
+probes on frozen SAE activations. It must not be confused with notebook 25's
+raw-embedding evaluation. Current paper correlations are descriptive; archived
+resampling diagnostics do not imply calibrated confidence intervals.
+
+## Results and model-family boundaries
+
+All current audits reuse the checkpoint-selection validation cohort. The
+registered test split was exposed earlier and is not fresh confirmation. Models,
+selection rules, patient units and input identities must accompany comparisons.
+After changing registered settings or code, use a new output directory rather
+than mixing results. Export complete weights/results before closing ephemeral
+cloud runtimes. Earlier legacy checkpoints already on the remote are not verified
+inputs for the expanded historical audit.
+
+The historical synthesis is assigned to batch 4. The current manuscript is
+assigned to `paper/current/` in batch 5 and supersedes that earlier claim wording.
