@@ -9,10 +9,10 @@ not introduce a new contrastive method, SAE architecture or clinical explanation
 
 ## Publication progress
 
-The repository is being published in five planned batches. **This first batch
-contains setup, preprocessing, the shared runtime and historical training code.**
-The audit workflows, current manuscript and aggregate results belong to later
-batches. Their paths below are explicitly marked as planned, not executable
+The repository is being published in five planned batches. **Batches 1 and 2 contain setup, preprocessing, historical training, preserved
+training workflows and the core analysis entry points.**
+The sensitivity/bootstrap helpers, aggregate results and current manuscript
+belong to later batches. Paths still marked as planned are not yet executable
 entry points in this partial release. See [docs/WORKFLOW.md](docs/WORKFLOW.md).
 
 ## Setup and checks available now
@@ -28,10 +28,10 @@ python scripts/run_embedding_experiment.py --stage probe --dry-run
 
 The dry-run commands inspect the plan without loading inputs, fitting models or
 producing scientific results. Real execution needs authorized inputs and their
-identity receipts. Receipts and stage-specific extensions are planned for the
-second batch; do not interpret a successful dry-run as a complete installed study.
+identity receipts. Receipts and stage-specific control extensions are now present;
+a successful dry-run still does not load or verify your private input archives.
 Training and notebook extras are in `requirements-training.txt`. Additional
-audit and preservation requirements are declared for the later batches.
+audit and preservation dependencies are in their corresponding requirements files.
 
 ## Entry-point map
 
@@ -40,12 +40,27 @@ audit and preservation requirements are declared for the later batches.
 | Patient-grouped preprocessing | `notebooks/13b_brats2023_preprocessing_fixed.ipynb` | Available; review configuration before execution | Authorized BraTS images, original patient mapping and earlier split metadata |
 | Historical image training | `notebooks/historical_training/20_*` | Available as an archive | Trusted indexed preprocessed PKL |
 | Earlier general training CLI | `scripts/revision_experiments.py` | Available; defaults do not define the final historical experiment | Processed metadata and matching configuration |
-| Shared embedding controls | `scripts/run_embedding_experiment.py` | Help and dry-run available; full stages need later files | Identity-checked embedding bundle; model archive for patient stage |
-| Preserved encoder runs | `notebooks/30_*` and `31_restore_preserved_saes_molab.py` | Planned for batch 2 | Authorized processed PKL and corresponding preserved exports |
-| Rank, AuxK, stability, retained variance and probes | `notebooks/21_*` through `25_*` | Planned for batch 2 | Historical embedding bundle; AuxK model archive for stability |
-| Current feature-population audit | `scripts/feature_population_audit.py`, `notebooks/32_feature_population_audit.ipynb` | Planned for batch 2 | Historical embeddings, matching SAE states and private validation covariates |
+| Shared embedding controls | `scripts/run_embedding_experiment.py` | Available; full stages require authorized input archives | Identity-checked embedding bundle; model archive for patient stage |
+| Preserved encoder runs | `notebooks/30_*` and `31_restore_preserved_saes_molab.py` | Available; review input requirements | Authorized processed PKL and corresponding preserved exports |
+| Rank, AuxK, stability, retained variance and probes | `notebooks/21_*` through `25_*` | Available; review input requirements | Historical embedding bundle; AuxK model archive for stability |
+| Current feature-population audit | `scripts/feature_population_audit.py`, `notebooks/32_feature_population_audit.ipynb` | Available; review input requirements | Historical embeddings, matching SAE states and private validation covariates |
 | Patient-resampling audit diagnostics | `scripts/bootstrap_feature_budget_patients.py`, `bootstrap_null_correlations.py` | Planned for batch 3 | Saved per-slice activations and patient identities; not distributed |
 | Current manuscript and its figures | `paper/current/` | Planned for batch 5 | No patient input needed to read or compile the manuscript |
+
+## Inspecting preserved exports without loading weights
+
+```bash
+python scripts/inspect_preserved_archive.py path/to/export.zip
+python scripts/inspect_preserved_archive.py path/to/export.zip --require-saes
+python -m unittest discover -s tests -p test_preserved_archive_inspection.py -v
+```
+
+The inspector reads ZIP directory metadata only. It lists checkpoints/manifests
+and missing expected names; it does not extract files, execute archived code,
+unpickle weights, verify checkpoint hashes or establish completed training.
+Exit codes are 0 for expected names present, 2 for missing names and 1 for
+unreadable or unsafe metadata. `--require-saes` additionally checks native
+baseline SAE filenames for seeds 10, 42 and 52.
 
 ## Scientific scope and provenance
 

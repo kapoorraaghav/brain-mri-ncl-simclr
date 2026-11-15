@@ -1,8 +1,8 @@
 # Workflow map and input provenance
 
 This map distinguishes historical analyses from preservation reruns and the
-current feature-population audit. It describes the full planned release; only
-the first batch is currently published. Planned paths are not yet runnable.
+current feature-population audit. It describes the full planned release; batches 1 and 2 are published. The sensitivity/bootstrap helpers and outputs
+assigned to batch 3 remain planned. Planned paths are not yet runnable.
 
 ## Available in the first batch
 
@@ -22,7 +22,7 @@ the first batch is currently published. Planned paths are not yet runnable.
 4. **Embedding stage wrapper:** `scripts/run_embedding_experiment.py` supports
    help and dry-run now. It combines the shared runtime with stage-specific
    extensions and registers a runtime checksum. Full execution additionally
-   needs the input receipts and extensions assigned to the second batch.
+   needs the input receipts and extensions now included in the second batch.
 
 ```bash
 python scripts/run_embedding_experiment.py --stage rank --dry-run
@@ -31,7 +31,7 @@ python scripts/run_embedding_experiment.py --stage probe --dry-run
 
 These commands do not load patient data, train a model or verify reproduction.
 
-## Planned preserved training and earlier controls: batch 2
+## Preserved training and earlier controls: batch 2
 
 - `notebooks/30_ncl_*` and `30_simclr_*` preserve separate encoder runs.
   `notebooks/31_restore_preserved_saes_molab.py` restores matching SAE analysis.
@@ -75,3 +75,14 @@ inputs for the expanded historical audit.
 
 The historical synthesis is assigned to batch 4. The current manuscript is
 assigned to `paper/current/` in batch 5 and supersedes that earlier claim wording.
+
+## Read-only preserved archive inventory
+
+Use `scripts/inspect_preserved_archive.py <archive.zip>` before closing a runtime
+or transferring an export. Add `--require-saes` when all three native baseline
+SAE states are expected. This checks names and flags missing expected files,
+unsafe paths, duplicate member names and symbolic-link members. It reads no
+payloads and performs no extraction. Even a successful inventory does not prove
+that weights deserialize, training finished or inference can be reproduced.
+Use the preserved reproduction verification workflow for those stronger checks.
+The inventory tool needs only Python's standard library, not MRI or PyTorch.
