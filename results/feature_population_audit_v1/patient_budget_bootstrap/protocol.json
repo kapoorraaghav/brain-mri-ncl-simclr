@@ -1,0 +1,24 @@
+{
+  "plan": {
+    "replicates": 2000,
+    "seed": 2026103007,
+    "unit": "whole validation patient, with replacement",
+    "paired": "same 37 patient draws for every method, encoder and SAE seed",
+    "budgets": [
+      8,
+      87
+    ],
+    "selection": "original validation-eligible training-usage ranking; IDs frozen before bootstrap",
+    "models": "fixed historical baseline encoders/SAEs; no refitting or reselection",
+    "top10": "recomputed from all resampled positive activations; repeated patients/slices retain multiplicity",
+    "ties": "descending activation, original slice order, then repeated-copy index",
+    "missing": "do not replace/drop selected IDs; retain [0,1] purity bounds if positive support <10",
+    "strict_interval": "2.5/97.5 percentiles on fully scorable replicates, only if >=95% replicates defined",
+    "outer_envelope": "2.5th percentile of gap lower bound to 97.5th percentile of gap upper bound; not guaranteed nominal coverage",
+    "scope": "conditional exploratory validation uncertainty; excludes fitting/selection uncertainty and does not create new patients"
+  },
+  "inputs": {
+    "embeddings_sha256": "e41d4ae24932127a5747073d7225bdfd2d20022ca8a22027222674b7494cf9eb",
+    "models_sha256": "212b09ddda6f3109879a11ffd2a3e465ee0a2ff50a171b4ddc2c917ddc96ac93"
+  }
+}
