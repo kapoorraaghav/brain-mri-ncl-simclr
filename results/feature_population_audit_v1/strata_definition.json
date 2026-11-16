@@ -1,0 +1,685 @@
+{
+  "4": {
+    "positive_area_cutpoints": [
+      0.00848388671875,
+      0.02447509765625,
+      0.0401611328125
+    ],
+    "slice_index_cutpoints": [
+      39.0,
+      71.0,
+      104.0
+    ],
+    "cells": [
+      {
+        "id": 0,
+        "slices": 1054,
+        "distinct_patients": 36,
+        "label_counts": {
+          "0": 1054,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 1,
+        "slices": 446,
+        "distinct_patients": 20,
+        "label_counts": {
+          "0": 446,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 2,
+        "slices": 212,
+        "distinct_patients": 18,
+        "label_counts": {
+          "0": 212,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 3,
+        "slices": 661,
+        "distinct_patients": 32,
+        "label_counts": {
+          "0": 661,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 5,
+        "slices": 88,
+        "distinct_patients": 16,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 55,
+          "4": 33
+        }
+      },
+      {
+        "id": 6,
+        "slices": 158,
+        "distinct_patients": 25,
+        "label_counts": {
+          "0": 0,
+          "1": 6,
+          "2": 138,
+          "4": 14
+        }
+      },
+      {
+        "id": 7,
+        "slices": 151,
+        "distinct_patients": 25,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 143,
+          "4": 8
+        }
+      },
+      {
+        "id": 8,
+        "slices": 198,
+        "distinct_patients": 25,
+        "label_counts": {
+          "0": 0,
+          "1": 11,
+          "2": 183,
+          "4": 4
+        }
+      },
+      {
+        "id": 10,
+        "slices": 27,
+        "distinct_patients": 7,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 4,
+          "4": 23
+        }
+      },
+      {
+        "id": 11,
+        "slices": 171,
+        "distinct_patients": 26,
+        "label_counts": {
+          "0": 0,
+          "1": 16,
+          "2": 119,
+          "4": 36
+        }
+      },
+      {
+        "id": 12,
+        "slices": 225,
+        "distinct_patients": 29,
+        "label_counts": {
+          "0": 0,
+          "1": 9,
+          "2": 194,
+          "4": 22
+        }
+      },
+      {
+        "id": 13,
+        "slices": 173,
+        "distinct_patients": 21,
+        "label_counts": {
+          "0": 0,
+          "1": 15,
+          "2": 153,
+          "4": 5
+        }
+      },
+      {
+        "id": 15,
+        "slices": 3,
+        "distinct_patients": 2,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "4": 3
+        }
+      },
+      {
+        "id": 16,
+        "slices": 196,
+        "distinct_patients": 22,
+        "label_counts": {
+          "0": 0,
+          "1": 39,
+          "2": 102,
+          "4": 55
+        }
+      },
+      {
+        "id": 17,
+        "slices": 295,
+        "distinct_patients": 29,
+        "label_counts": {
+          "0": 0,
+          "1": 43,
+          "2": 216,
+          "4": 36
+        }
+      },
+      {
+        "id": 18,
+        "slices": 105,
+        "distinct_patients": 14,
+        "label_counts": {
+          "0": 0,
+          "1": 37,
+          "2": 61,
+          "4": 7
+        }
+      },
+      {
+        "id": 21,
+        "slices": 205,
+        "distinct_patients": 12,
+        "label_counts": {
+          "0": 0,
+          "1": 38,
+          "2": 116,
+          "4": 51
+        }
+      },
+      {
+        "id": 22,
+        "slices": 338,
+        "distinct_patients": 19,
+        "label_counts": {
+          "0": 0,
+          "1": 109,
+          "2": 213,
+          "4": 16
+        }
+      },
+      {
+        "id": 23,
+        "slices": 55,
+        "distinct_patients": 9,
+        "label_counts": {
+          "0": 0,
+          "1": 35,
+          "2": 20,
+          "4": 0
+        }
+      }
+    ],
+    "zero_area_slices": 2373
+  },
+  "3": {
+    "positive_area_cutpoints": [
+      0.0140380859375,
+      0.03497314453125
+    ],
+    "slice_index_cutpoints": [
+      50.0,
+      93.0
+    ],
+    "cells": [
+      {
+        "id": 0,
+        "slices": 1265,
+        "distinct_patients": 37,
+        "label_counts": {
+          "0": 1265,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 1,
+        "slices": 352,
+        "distinct_patients": 24,
+        "label_counts": {
+          "0": 352,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 2,
+        "slices": 756,
+        "distinct_patients": 32,
+        "label_counts": {
+          "0": 756,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 4,
+        "slices": 173,
+        "distinct_patients": 18,
+        "label_counts": {
+          "0": 0,
+          "1": 1,
+          "2": 108,
+          "4": 64
+        }
+      },
+      {
+        "id": 5,
+        "slices": 279,
+        "distinct_patients": 31,
+        "label_counts": {
+          "0": 0,
+          "1": 9,
+          "2": 246,
+          "4": 24
+        }
+      },
+      {
+        "id": 6,
+        "slices": 342,
+        "distinct_patients": 32,
+        "label_counts": {
+          "0": 0,
+          "1": 15,
+          "2": 323,
+          "4": 4
+        }
+      },
+      {
+        "id": 8,
+        "slices": 112,
+        "distinct_patients": 16,
+        "label_counts": {
+          "0": 0,
+          "1": 9,
+          "2": 37,
+          "4": 66
+        }
+      },
+      {
+        "id": 9,
+        "slices": 416,
+        "distinct_patients": 32,
+        "label_counts": {
+          "0": 0,
+          "1": 48,
+          "2": 317,
+          "4": 51
+        }
+      },
+      {
+        "id": 10,
+        "slices": 268,
+        "distinct_patients": 24,
+        "label_counts": {
+          "0": 0,
+          "1": 43,
+          "2": 202,
+          "4": 23
+        }
+      },
+      {
+        "id": 12,
+        "slices": 21,
+        "distinct_patients": 5,
+        "label_counts": {
+          "0": 0,
+          "1": 3,
+          "2": 14,
+          "4": 4
+        }
+      },
+      {
+        "id": 13,
+        "slices": 544,
+        "distinct_patients": 26,
+        "label_counts": {
+          "0": 0,
+          "1": 139,
+          "2": 328,
+          "4": 77
+        }
+      },
+      {
+        "id": 14,
+        "slices": 233,
+        "distinct_patients": 15,
+        "label_counts": {
+          "0": 0,
+          "1": 91,
+          "2": 142,
+          "4": 0
+        }
+      }
+    ],
+    "zero_area_slices": 2373
+  },
+  "5": {
+    "positive_area_cutpoints": [
+      0.005883789062500002,
+      0.01873779296875,
+      0.0302734375,
+      0.0433349609375
+    ],
+    "slice_index_cutpoints": [
+      32.0,
+      59.0,
+      84.0,
+      110.0
+    ],
+    "cells": [
+      {
+        "id": 0,
+        "slices": 886,
+        "distinct_patients": 36,
+        "label_counts": {
+          "0": 886,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 1,
+        "slices": 520,
+        "distinct_patients": 28,
+        "label_counts": {
+          "0": 520,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 2,
+        "slices": 154,
+        "distinct_patients": 15,
+        "label_counts": {
+          "0": 154,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 3,
+        "slices": 229,
+        "distinct_patients": 16,
+        "label_counts": {
+          "0": 229,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 4,
+        "slices": 584,
+        "distinct_patients": 32,
+        "label_counts": {
+          "0": 584,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      {
+        "id": 6,
+        "slices": 30,
+        "distinct_patients": 8,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 18,
+          "4": 12
+        }
+      },
+      {
+        "id": 7,
+        "slices": 113,
+        "distinct_patients": 24,
+        "label_counts": {
+          "0": 0,
+          "1": 4,
+          "2": 88,
+          "4": 21
+        }
+      },
+      {
+        "id": 8,
+        "slices": 104,
+        "distinct_patients": 22,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 95,
+          "4": 9
+        }
+      },
+      {
+        "id": 9,
+        "slices": 92,
+        "distinct_patients": 16,
+        "label_counts": {
+          "0": 0,
+          "1": 3,
+          "2": 88,
+          "4": 1
+        }
+      },
+      {
+        "id": 10,
+        "slices": 139,
+        "distinct_patients": 22,
+        "label_counts": {
+          "0": 0,
+          "1": 4,
+          "2": 133,
+          "4": 2
+        }
+      },
+      {
+        "id": 12,
+        "slices": 4,
+        "distinct_patients": 2,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "4": 4
+        }
+      },
+      {
+        "id": 13,
+        "slices": 99,
+        "distinct_patients": 19,
+        "label_counts": {
+          "0": 0,
+          "1": 6,
+          "2": 52,
+          "4": 41
+        }
+      },
+      {
+        "id": 14,
+        "slices": 134,
+        "distinct_patients": 26,
+        "label_counts": {
+          "0": 0,
+          "1": 9,
+          "2": 107,
+          "4": 18
+        }
+      },
+      {
+        "id": 15,
+        "slices": 119,
+        "distinct_patients": 20,
+        "label_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 117,
+          "4": 2
+        }
+      },
+      {
+        "id": 16,
+        "slices": 119,
+        "distinct_patients": 19,
+        "label_counts": {
+          "0": 0,
+          "1": 13,
+          "2": 103,
+          "4": 3
+        }
+      },
+      {
+        "id": 19,
+        "slices": 90,
+        "distinct_patients": 16,
+        "label_counts": {
+          "0": 0,
+          "1": 3,
+          "2": 45,
+          "4": 42
+        }
+      },
+      {
+        "id": 20,
+        "slices": 174,
+        "distinct_patients": 24,
+        "label_counts": {
+          "0": 0,
+          "1": 21,
+          "2": 132,
+          "4": 21
+        }
+      },
+      {
+        "id": 21,
+        "slices": 140,
+        "distinct_patients": 21,
+        "label_counts": {
+          "0": 0,
+          "1": 4,
+          "2": 121,
+          "4": 15
+        }
+      },
+      {
+        "id": 22,
+        "slices": 73,
+        "distinct_patients": 13,
+        "label_counts": {
+          "0": 0,
+          "1": 17,
+          "2": 52,
+          "4": 4
+        }
+      },
+      {
+        "id": 25,
+        "slices": 101,
+        "distinct_patients": 14,
+        "label_counts": {
+          "0": 0,
+          "1": 22,
+          "2": 43,
+          "4": 36
+        }
+      },
+      {
+        "id": 26,
+        "slices": 158,
+        "distinct_patients": 20,
+        "label_counts": {
+          "0": 0,
+          "1": 24,
+          "2": 123,
+          "4": 11
+        }
+      },
+      {
+        "id": 27,
+        "slices": 181,
+        "distinct_patients": 22,
+        "label_counts": {
+          "0": 0,
+          "1": 48,
+          "2": 116,
+          "4": 17
+        }
+      },
+      {
+        "id": 28,
+        "slices": 39,
+        "distinct_patients": 9,
+        "label_counts": {
+          "0": 0,
+          "1": 15,
+          "2": 24,
+          "4": 0
+        }
+      },
+      {
+        "id": 31,
+        "slices": 61,
+        "distinct_patients": 9,
+        "label_counts": {
+          "0": 0,
+          "1": 13,
+          "2": 35,
+          "4": 13
+        }
+      },
+      {
+        "id": 32,
+        "slices": 201,
+        "distinct_patients": 17,
+        "label_counts": {
+          "0": 0,
+          "1": 55,
+          "2": 105,
+          "4": 41
+        }
+      },
+      {
+        "id": 33,
+        "slices": 201,
+        "distinct_patients": 13,
+        "label_counts": {
+          "0": 0,
+          "1": 81,
+          "2": 120,
+          "4": 0
+        }
+      },
+      {
+        "id": 34,
+        "slices": 16,
+        "distinct_patients": 1,
+        "label_counts": {
+          "0": 0,
+          "1": 16,
+          "2": 0,
+          "4": 0
+        }
+      }
+    ],
+    "zero_area_slices": 2373
+  }
+}
