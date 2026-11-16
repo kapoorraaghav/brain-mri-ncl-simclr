@@ -1,0 +1,196 @@
+{
+  "methods": {
+    "ncl": {
+      "eligible_features": {
+        "mean": 132.66666666666666,
+        "sd": 41.810418690932906
+      },
+      "mean_purity": {
+        "mean": 0.8398771446946683,
+        "sd": 0.026464081352181104
+      },
+      "mean_global_excess": {
+        "mean": 0.28048560878727036,
+        "sd": 0.02696195565409365
+      },
+      "mean_stratified_excess": {
+        "mean": 0.045205972114153836,
+        "sd": 0.0348797804189511
+      },
+      "rho_purity_utility": {
+        "mean": 0.17446919352282156,
+        "sd": 0.08859426024400421
+      },
+      "rho_stratified_excess_utility": {
+        "mean": -0.017926062346743266,
+        "sd": 0.06605343419153745
+      },
+      "mean_stratified3_excess": {
+        "mean": 0.04771897369669246,
+        "sd": 0.03137812552066047
+      },
+      "mean_stratified5_excess": {
+        "mean": 0.0472296535825091,
+        "sd": 0.026531534372148797
+      }
+    },
+    "simclr": {
+      "eligible_features": {
+        "mean": 1238.111111111111,
+        "sd": 77.521562113986
+      },
+      "mean_purity": {
+        "mean": 0.7987322096680584,
+        "sd": 0.010643867270174395
+      },
+      "mean_global_excess": {
+        "mean": 0.24023612359775506,
+        "sd": 0.010648291517771186
+      },
+      "mean_stratified_excess": {
+        "mean": 0.048495953562665034,
+        "sd": 0.005624249630051898
+      },
+      "rho_purity_utility": {
+        "mean": 0.32800368304851774,
+        "sd": 0.03280247588186537
+      },
+      "rho_stratified_excess_utility": {
+        "mean": -0.012231701059973734,
+        "sd": 0.026957774456812227
+      },
+      "mean_stratified3_excess": {
+        "mean": 0.049287734694261835,
+        "sd": 0.00590561058393862
+      },
+      "mean_stratified5_excess": {
+        "mean": 0.04586744466600733,
+        "sd": 0.006058426162889843
+      }
+    },
+    "supervised": {
+      "eligible_features": {
+        "mean": 375.0,
+        "sd": 73.90158621061151
+      },
+      "mean_purity": {
+        "mean": 0.797877771399932,
+        "sd": 0.005476038180749247
+      },
+      "mean_global_excess": {
+        "mean": 0.23919508351982036,
+        "sd": 0.005568747711973051
+      },
+      "mean_stratified_excess": {
+        "mean": 0.047007989451390196,
+        "sd": 0.004538950203392121
+      },
+      "rho_purity_utility": {
+        "mean": 0.2968639169019336,
+        "sd": 0.006377096784706425
+      },
+      "rho_stratified_excess_utility": {
+        "mean": 0.022750476303301567,
+        "sd": 0.01218042570391807
+      },
+      "mean_stratified3_excess": {
+        "mean": 0.04741533636292774,
+        "sd": 0.003422665754152526
+      },
+      "mean_stratified5_excess": {
+        "mean": 0.047639282780409,
+        "sd": 0.0045516022489196445
+      }
+    }
+  },
+  "common_absolute_budget": [
+    8,
+    87
+  ],
+  "conditional_sign_change_J": [
+    66,
+    67,
+    71
+  ],
+  "gap_at_budgets": {
+    "8": -0.08194444444444444,
+    "32": -0.030555555555555558,
+    "64": -0.0010416666666665335,
+    "80": 0.01041666666666674
+  },
+  "null_gap_primary": -0.0032899814485111978,
+  "null_gap_sensitivity": {
+    "3": -0.0015687609975693767,
+    "5": 0.001362208916501767
+  },
+  "scope": "Exploratory validation; curves have equal replication only on the common plotted domain; sign changes are descriptive, not change-point estimates.",
+  "patient_budget_bootstrap": {
+    "status": "complete",
+    "patients": 37,
+    "replicates": 2000,
+    "dictionaries": 18,
+    "paired_patient_resampling": true,
+    "fitted_models_and_feature_ids_fixed": true,
+    "literal_expansion_toy_check": "passed",
+    "observed_points_match_saved_feature_purity": "passed",
+    "intervals_conditional_on_models_and_original_selection": true,
+    "patient_intervals_added_for": "Fig 2B budget gap only; not new correlation or null results",
+    "selected_budgets": [
+      {
+        "J": 8,
+        "point_gap": -0.08194444444444438,
+        "strict_complete_fraction": 0.998,
+        "strict_ci_lower": -0.125,
+        "strict_ci_upper": -0.012499999999999942,
+        "outer_percentile_lower": -0.125,
+        "outer_percentile_upper": -0.012499999999999952,
+        "mean_ncl_coverage": 1.0,
+        "mean_simclr_coverage": 0.9999652777777777
+      },
+      {
+        "J": 32,
+        "point_gap": -0.030555555555555558,
+        "strict_complete_fraction": 0.9035,
+        "strict_ci_lower": null,
+        "strict_ci_upper": null,
+        "outer_percentile_lower": -0.04965277777777788,
+        "outer_percentile_upper": 0.018055555555555384,
+        "mean_ncl_coverage": 1.0,
+        "mean_simclr_coverage": 0.9995555555555556
+      },
+      {
+        "J": 64,
+        "point_gap": -0.0010416666666667185,
+        "strict_complete_fraction": 0.024,
+        "strict_ci_lower": null,
+        "strict_ci_upper": null,
+        "outer_percentile_lower": -0.027604166666666655,
+        "outer_percentile_upper": 0.031597222222222165,
+        "mean_ncl_coverage": 0.9954027777777779,
+        "mean_simclr_coverage": 0.9992326388888889
+      },
+      {
+        "J": 80,
+        "point_gap": 0.01041666666666674,
+        "strict_complete_fraction": 0.0045,
+        "strict_ci_lower": null,
+        "strict_ci_upper": null,
+        "outer_percentile_lower": -0.024031250000000302,
+        "outer_percentile_upper": 0.04278125000000001,
+        "mean_ncl_coverage": 0.9901479166666666,
+        "mean_simclr_coverage": 0.9990861111111112
+      },
+      {
+        "J": 87,
+        "point_gap": 0.011111111111111183,
+        "strict_complete_fraction": 0.0,
+        "strict_ci_lower": null,
+        "strict_ci_upper": null,
+        "outer_percentile_lower": -0.025287356321839097,
+        "outer_percentile_upper": 0.040996168582375536,
+        "mean_ncl_coverage": 0.9888288633461048,
+        "mean_simclr_coverage": 0.9985772669220944
+      }
+    ]
+  }
+}
