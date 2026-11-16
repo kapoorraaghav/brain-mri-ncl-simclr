@@ -9,9 +9,9 @@ not introduce a new contrastive method, SAE architecture or clinical explanation
 
 ## Publication progress
 
-The repository is being published in five planned batches. **Batches 1 and 2 contain setup, preprocessing, historical training, preserved
-training workflows and the core analysis entry points.**
-The sensitivity/bootstrap helpers, aggregate results and current manuscript
+The repository is being published in five planned batches. **Batches 1 through 3 contain setup, training workflows, audit entry points,
+conditional patient-resampling code and core aggregate audit outputs.**
+The remaining historical result tables, manuscript synthesis and current paper
 belong to later batches. Paths still marked as planned are not yet executable
 entry points in this partial release. See [docs/WORKFLOW.md](docs/WORKFLOW.md).
 
@@ -35,7 +35,7 @@ audit and preservation dependencies are in their corresponding requirements file
 
 ## Entry-point map
 
-| Workflow | Entry point | Status after the first batch | Required inputs |
+| Workflow | Entry point | Availability in published batches | Required inputs |
 |---|---|---|---|
 | Patient-grouped preprocessing | `notebooks/13b_brats2023_preprocessing_fixed.ipynb` | Available; review configuration before execution | Authorized BraTS images, original patient mapping and earlier split metadata |
 | Historical image training | `notebooks/historical_training/20_*` | Available as an archive | Trusted indexed preprocessed PKL |
@@ -44,7 +44,7 @@ audit and preservation dependencies are in their corresponding requirements file
 | Preserved encoder runs | `notebooks/30_*` and `31_restore_preserved_saes_molab.py` | Available; review input requirements | Authorized processed PKL and corresponding preserved exports |
 | Rank, AuxK, stability, retained variance and probes | `notebooks/21_*` through `25_*` | Available; review input requirements | Historical embedding bundle; AuxK model archive for stability |
 | Current feature-population audit | `scripts/feature_population_audit.py`, `notebooks/32_feature_population_audit.ipynb` | Available; review input requirements | Historical embeddings, matching SAE states and private validation covariates |
-| Patient-resampling audit diagnostics | `scripts/bootstrap_feature_budget_patients.py`, `bootstrap_null_correlations.py` | Planned for batch 3 | Saved per-slice activations and patient identities; not distributed |
+| Patient-resampling audit diagnostics | `scripts/bootstrap_feature_budget_patients.py`, `bootstrap_null_correlations.py` | Available; requires private patient-level inputs | Saved per-slice activations and patient identities; not distributed |
 | Current manuscript and its figures | `paper/current/` | Planned for batch 5 | No patient input needed to read or compile the manuscript |
 
 ## Inspecting preserved exports without loading weights
@@ -61,6 +61,19 @@ unpickle weights, verify checkpoint hashes or establish completed training.
 Exit codes are 0 for expected names present, 2 for missing names and 1 for
 unreadable or unsafe metadata. `--require-saes` additionally checks native
 baseline SAE filenames for seeds 10, 42 and 52.
+
+## Historical audit preflight
+
+```bash
+python scripts/check_audit_inputs.py --dry-run
+python scripts/check_audit_inputs.py
+```
+
+The first command checks paths only; the second verifies the three registered
+historical input hashes. Neither loads a model or writes predictions. Missing
+private inputs are expected in a clean checkout and return status 2. See
+[docs/FEATURE_POPULATION_AUDIT.md](docs/FEATURE_POPULATION_AUDIT.md) for overrides,
+scope and the distinction between the historical and preserved model families.
 
 ## Scientific scope and provenance
 

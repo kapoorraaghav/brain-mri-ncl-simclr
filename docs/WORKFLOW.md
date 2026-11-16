@@ -1,8 +1,8 @@
 # Workflow map and input provenance
 
 This map distinguishes historical analyses from preservation reruns and the
-current feature-population audit. It describes the full planned release; batches 1 and 2 are published. The sensitivity/bootstrap helpers and outputs
-assigned to batch 3 remain planned. Planned paths are not yet runnable.
+current feature-population audit. It describes the full planned release; batches 1 through 3 are published. The sensitivity/bootstrap helpers and core
+audit outputs are now present; later manuscript/table batches remain planned.
 
 ## Available in the first batch
 
@@ -50,7 +50,7 @@ These commands do not load patient data, train a model or verify reproduction.
 The exact embedding and model identities are recorded in the receipt JSON files
 assigned to batch 2. Do not invent replacement receipts for a different archive.
 
-## Planned current feature-population audit: batches 2 and 3
+## Current feature-population audit: batches 2 and 3
 
 The notebook 32 entry point and `scripts/feature_population_audit.py` use
 historical embeddings, matching SAE states and private per-slice validation
@@ -86,3 +86,13 @@ payloads and performs no extraction. Even a successful inventory does not prove
 that weights deserialize, training finished or inference can be reproduced.
 Use the preserved reproduction verification workflow for those stronger checks.
 The inventory tool needs only Python's standard library, not MRI or PyTorch.
+
+## Historical input preflight
+
+`scripts/check_audit_inputs.py --dry-run` checks the configured primary paths
+without reading private input payloads. Without `--dry-run` it compares SHA256
+against the registered historical audit protocol. It never loads models or writes
+results. Overrides apply only to this helper; the numerical audit entry points
+retain their own input paths. Follow `docs/FEATURE_POPULATION_AUDIT.md` for input
+families and the limits of these checks. Do not relabel preserved-rerun states as
+historical states to make an input check pass.
