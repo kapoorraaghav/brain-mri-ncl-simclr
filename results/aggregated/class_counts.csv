@@ -1,0 +1,7 @@
+split,has_tumor,slices
+test,0,2370
+test,1,2451
+train,0,69891
+train,1,68508
+val,0,2373
+val,1,2388
