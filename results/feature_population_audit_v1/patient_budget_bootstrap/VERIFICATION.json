@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "whole_patient_draw_counts": "passed",
+  "multiplicity_check": "passed",
+  "point_estimate_replay": "passed",
+  "gap_bound_ordering": "passed",
+  "fully_scorable_bound_equality": "passed",
+  "replicates": 2000,
+  "patients": 37
+}
