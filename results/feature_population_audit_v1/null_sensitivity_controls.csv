@@ -1,0 +1,3 @@
+control,known_top10_purity,global_null,stratified_null,stratified_excess
+absence_only,1.0,0.5493,1.0,0.0
+within_cell_label4_oracle,1.0,0.5601,0.6606,0.33940000000000003
