@@ -1,0 +1,31 @@
+{
+  "scope": "synthetic oracle sensitivity diagnostic, not learned features or evidence of generalization",
+  "protocol": "absence-only indicator; label4 indicator in first sorted mixed cell with >=10 label4 examples; first-ten index ties",
+  "primary_bins": 4,
+  "permutations": 1000,
+  "target_cell": 5,
+  "target_cell_slices": 88,
+  "target_cell_label_counts": {
+    "0": 0,
+    "1": 0,
+    "2": 55,
+    "4": 33
+  },
+  "controls": [
+    {
+      "control": "absence_only",
+      "known_top10_purity": 1.0,
+      "global_null": 0.5493,
+      "stratified_null": 1.0,
+      "stratified_excess": 0.0
+    },
+    {
+      "control": "within_cell_label4_oracle",
+      "known_top10_purity": 1.0,
+      "global_null": 0.5601,
+      "stratified_null": 0.6606,
+      "stratified_excess": 0.33940000000000003
+    }
+  ],
+  "status": "passed"
+}
