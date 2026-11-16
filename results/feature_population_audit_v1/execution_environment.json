@@ -1,0 +1,33 @@
+{
+  "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:13:20) [MSC v.1942 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.5.2",
+    "matplotlib": "3.10.9"
+  },
+  "code_sha256": {
+    "scripts/feature_population_audit.py": "17e3e45c7b581519716a7a2261b2cc96830dd1815033f8d7ce6d16515f6d928c",
+    "scripts/fit_supervised_reference_saes.py": "058fb7f5945f16ea3892b3f7214a648f5801455e10ef975ce6d5cb0686132ff8",
+    "scripts/verify_feature_population_audit.py": "1484f87f0f30a747caed777fea9601a8fe4df77282186fbe2653f65cfbbc596f",
+    "work/report_feature_population_audit.py": "9dfd65cbdf4aa5d608d3e4ca1ff7fffc93f35c8f1aa4abcadeb9a23f500c65a3",
+    "scripts/bootstrap_feature_budget_patients.py": "5f71f3c39693281b653be06dca02157a6f3dfc7192e8d67c6842ccbec5b73faf"
+  },
+  "post_review_exploratory": true,
+  "gpu_training_and_activation_device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "analysis_complete": true,
+  "dictionaries": 27,
+  "new_supervised_sae_fits": 9,
+  "encoder_retraining_performed": false,
+  "test_images_accessed": false,
+  "supplementary_control_script_sha256": "38ca4bf8d1488d3db749f2084a0658f037a9de67e4916934558f976298f7e860",
+  "patient_budget_bootstrap": {
+    "replicates": 2000,
+    "patients": 37,
+    "fixed_dictionaries": 18,
+    "status": "complete",
+    "scope": "paired conditional pointwise bootstrap plus missing-support bounds"
+  }
+}
