@@ -1,0 +1,13 @@
+split,dominant_label,slices
+test,0,2370
+test,1,291
+test,2,2020
+test,4,140
+train,0,69891
+train,1,4481
+train,2,53927
+train,4,10100
+val,0,2373
+val,1,358
+val,2,1717
+val,4,313
