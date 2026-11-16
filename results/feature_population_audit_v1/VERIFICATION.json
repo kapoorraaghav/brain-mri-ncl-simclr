@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "dictionary_states_checked": 27,
+  "new_supervised_states_checked": 9,
+  "registered_input_hashes": "passed",
+  "sparse_auroc_sklearn_tie_cases": 12,
+  "strata_count_preservation": "passed",
+  "saved_top10_purity_recalculation": "passed",
+  "orientation_training_only": "passed",
+  "bounds_and_full_pool_random_endpoint": "passed",
+  "test_images_accessed": false
+}
