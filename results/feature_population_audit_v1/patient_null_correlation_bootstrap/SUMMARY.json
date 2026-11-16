@@ -1,0 +1,154 @@
+{
+  "status": "complete",
+  "plan": {
+    "replicates": 1000,
+    "null_permutations_per_draw": 1000,
+    "null_seed": 2026103019,
+    "draws": "first 1000 paired whole-patient draws from patient_budget_bootstrap/patient_draws.npz",
+    "models": "fixed historical models; training-fitted AUROC orientations fixed",
+    "population": "full frozen dictionary; reapply positive support >=10 in every draw, including originally ineligible units",
+    "strata": "original four-bin covariate cutpoints fixed; cell label counts recomputed on expanded patient copies",
+    "null": "shuffle expanded slice labels without replacement within each stratum; same permutations across models",
+    "top10": "recomputed with multiplicity; descending activation, original slice index, copy index ties",
+    "interval": "pointwise percentile 2.5/97.5, conditional on fitted models and original analysis choices",
+    "aggregation": "average SAE seeds within encoder, then equal-weight encoder average; no resampling encoder seeds",
+    "scope": "exploratory reused validation cohort; excludes model/selection uncertainty; finite inner Monte Carlo error remains"
+  },
+  "intervals": [
+    {
+      "method": "ncl",
+      "metric": "excess_mean",
+      "lower": 0.02266345288515157,
+      "upper": 0.07637627745680561,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.04520597211415386,
+      "bootstrap_mean": 0.04939116481437519,
+      "minimum_eligible": 80,
+      "maximum_eligible": 190
+    },
+    {
+      "method": "ncl",
+      "metric": "raw_rho",
+      "lower": 0.10916732139862999,
+      "upper": 0.22696558347534748,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.1744691935228216,
+      "bootstrap_mean": 0.16887334233170645,
+      "minimum_eligible": 80,
+      "maximum_eligible": 190
+    },
+    {
+      "method": "ncl",
+      "metric": "excess_rho",
+      "lower": -0.02532254989483208,
+      "upper": 0.12419268664290285,
+      "finite_fraction": 1.0,
+      "point_estimate": -0.017926062346743266,
+      "bootstrap_mean": 0.046274943072749396,
+      "minimum_eligible": 80,
+      "maximum_eligible": 190
+    },
+    {
+      "method": "simclr",
+      "metric": "excess_mean",
+      "lower": 0.02929493168655172,
+      "upper": 0.09015691252030915,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.04849595356266504,
+      "bootstrap_mean": 0.05942390852351766,
+      "minimum_eligible": 1045,
+      "maximum_eligible": 1321
+    },
+    {
+      "method": "simclr",
+      "metric": "raw_rho",
+      "lower": 0.2578231342491545,
+      "upper": 0.38315670628811566,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.32800368304851774,
+      "bootstrap_mean": 0.317451063321145,
+      "minimum_eligible": 1045,
+      "maximum_eligible": 1321
+    },
+    {
+      "method": "simclr",
+      "metric": "excess_rho",
+      "lower": -0.006297640845524192,
+      "upper": 0.11934966316434358,
+      "finite_fraction": 1.0,
+      "point_estimate": -0.012231701059973768,
+      "bootstrap_mean": 0.058451223215461465,
+      "minimum_eligible": 1045,
+      "maximum_eligible": 1321
+    },
+    {
+      "method": "supervised",
+      "metric": "excess_mean",
+      "lower": 0.03169651421451665,
+      "upper": 0.09596797682571698,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.047007989451390175,
+      "bootstrap_mean": 0.06380970187840178,
+      "minimum_eligible": 277,
+      "maximum_eligible": 468
+    },
+    {
+      "method": "supervised",
+      "metric": "raw_rho",
+      "lower": 0.20625790303742544,
+      "upper": 0.3250345895139464,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.29686391690193364,
+      "bootstrap_mean": 0.2657374221389788,
+      "minimum_eligible": 277,
+      "maximum_eligible": 468
+    },
+    {
+      "method": "supervised",
+      "metric": "excess_rho",
+      "lower": -0.031184921262080684,
+      "upper": 0.09258057776643738,
+      "finite_fraction": 1.0,
+      "point_estimate": 0.022750476303301598,
+      "bootstrap_mean": 0.030596186369052626,
+      "minimum_eligible": 277,
+      "maximum_eligible": 468
+    },
+    {
+      "method": "ncl_minus_simclr",
+      "metric": "excess_mean",
+      "lower": -0.0318157129627984,
+      "upper": 0.01265545721405278,
+      "finite_fraction": 1.0,
+      "bootstrap_mean": -0.010032743709142469,
+      "point_estimate": -0.003289981448511184
+    }
+  ],
+  "inner_Monte_Carlo_sensitivity": {
+    "gap_max_abs_change_half_vs_full": 0.0007095191476247098,
+    "gap_interval_half": [
+      -0.03174376826436585,
+      0.012837770983849296
+    ],
+    "gap_interval_full": [
+      -0.0318157129627984,
+      0.01265545721405278
+    ],
+    "excess_rho_interval_half": {
+      "ncl": [
+        -0.023644308188765256,
+        0.12452809913349239
+      ],
+      "simclr": [
+        -0.005928340095320632,
+        0.11920710828488018
+      ],
+      "supervised": [
+        -0.03087268535317735,
+        0.09227025303098943
+      ]
+    }
+  },
+  "original_point_estimates": "unchanged original 1000-permutation audit; intervals recompute all-eligible functional",
+  "bootstrap_bias_note": "resampling duplicates patients/slices and changes eligibility and top-ten order statistics; percentile interval need not center on original estimate"
+}
