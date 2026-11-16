@@ -1,0 +1,53 @@
+{
+  "plan": {
+    "version": "feature-population-audit-v1",
+    "scope": "post-review exploratory reused validation; no confirmatory inference",
+    "methods": [
+      "ncl",
+      "simclr",
+      "supervised"
+    ],
+    "encoder_seeds": [
+      10,
+      42,
+      52
+    ],
+    "sae_seeds": [
+      10,
+      42,
+      52
+    ],
+    "primary_variant": "baseline",
+    "top_m": 10,
+    "dictionary_size": 1536,
+    "k": 24,
+    "null_permutations": 1000,
+    "null_seed": 20261030,
+    "strata_bin_counts": [
+      4,
+      3,
+      5
+    ],
+    "primary_strata_bins": 4,
+    "strata": "separate zero tumour area; quantile bins of positive area crossed with axial-index quantile bins",
+    "bins_fit": "fixed validation-covariate quantiles, no feature/label-purity optimization",
+    "null_scope": "descriptive conditional reference, not causal adjustment or patient-level permutation test; area uses annotation masks",
+    "orientation": "univariate AUROC orientation chosen on training tumour labels only; applied frozen to validation",
+    "budgets": "every integer J>=8 up to maximum eligible count; common paired domain plus method-specific endpoint",
+    "selectors": [
+      "validation_eligible_training_usage",
+      "training_only_usage"
+    ],
+    "missing_bounds": "retain selected IDs; [0,1] for unscorable purity; do not replace or renormalize them in bounded mean",
+    "random_replicates": 1000,
+    "random_seed": 783013,
+    "random_rule": "without replacement, nested random permutations of same selector candidate pool",
+    "aggregation": "average SAE seeds within encoder first; report 3 encoder means; feature-level p-values not interpreted",
+    "supervised_scope": "new native SAE fits on archived supervised encoder vectors, historical SAE initialization/optimizer recipe; encoder objective/augmentation differ"
+  },
+  "inputs": {
+    "embeddings_sha256": "e41d4ae24932127a5747073d7225bdfd2d20022ca8a22027222674b7494cf9eb",
+    "historical_sae_archive_sha256": "212b09ddda6f3109879a11ffd2a3e465ee0a2ff50a171b4ddc2c917ddc96ac93",
+    "covariates_sha256": "c8afebf790a1699f82371970d7459e30ac15bb2e40a75d14d6a2c25fff7898eb"
+  }
+}
