@@ -1,0 +1,22 @@
+{
+  "plan": {
+    "replicates": 1000,
+    "null_permutations_per_draw": 1000,
+    "null_seed": 2026103019,
+    "draws": "first 1000 paired whole-patient draws from patient_budget_bootstrap/patient_draws.npz",
+    "models": "fixed historical models; training-fitted AUROC orientations fixed",
+    "population": "full frozen dictionary; reapply positive support >=10 in every draw, including originally ineligible units",
+    "strata": "original four-bin covariate cutpoints fixed; cell label counts recomputed on expanded patient copies",
+    "null": "shuffle expanded slice labels without replacement within each stratum; same permutations across models",
+    "top10": "recomputed with multiplicity; descending activation, original slice index, copy index ties",
+    "interval": "pointwise percentile 2.5/97.5, conditional on fitted models and original analysis choices",
+    "aggregation": "average SAE seeds within encoder, then equal-weight encoder average; no resampling encoder seeds",
+    "scope": "exploratory reused validation cohort; excludes model/selection uncertainty; finite inner Monte Carlo error remains"
+  },
+  "input_hashes": {
+    "embeddings": "e41d4ae24932127a5747073d7225bdfd2d20022ca8a22027222674b7494cf9eb",
+    "historical_states": "212b09ddda6f3109879a11ffd2a3e465ee0a2ff50a171b4ddc2c917ddc96ac93",
+    "covariates": "c8afebf790a1699f82371970d7459e30ac15bb2e40a75d14d6a2c25fff7898eb",
+    "draws": "193309785632f955cadfcf4cc76545484fafb0139416da1351661f42798448fe"
+  }
+}
