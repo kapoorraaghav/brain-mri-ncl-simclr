@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "dictionaries": 27,
+  "original_full_dictionary_AUROC_matches_archived_sparse_implementation": true,
+  "original_eligibility_and_purity_match_archived_tables": true,
+  "literal_expansion_top10_and_sklearn_weighted_AUROC_toys": true,
+  "null_cell_label_counts_checked": "all 1000 patient draws; permutations 0,499,999",
+  "patient_draw_totals": 37,
+  "state_sha256_bound_to_each_fit": true
+}
