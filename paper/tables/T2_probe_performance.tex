@@ -1,0 +1,16 @@
+\begin{tabular}{lllllll}
+\toprule
+Condition & Method & Accuracy (\%) & Macro-F1 (\%) & Bal. acc. (\%) & AUROC & AP \\
+\midrule
+Native & NCL & 84.84 (SD) 3.76 & 84.80 (SD) 3.75 & 84.85 (SD) 3.77 & 0.930 (SD) 0.027 & 0.940 (SD) 0.026 \\
+Native & SimCLR & 87.92 (SD) 0.32 & 87.88 (SD) 0.33 & 87.93 (SD) 0.32 & 0.951 (SD) 0.005 & 0.959 (SD) 0.004 \\
+Rank 8 & NCL & 80.84 (SD) 7.82 & 80.75 (SD) 7.80 & 80.86 (SD) 7.83 & 0.896 (SD) 0.059 & 0.901 (SD) 0.069 \\
+Rank 8 & SimCLR & 76.43 (SD) 5.00 & 76.36 (SD) 4.97 & 76.44 (SD) 5.02 & 0.860 (SD) 0.049 & 0.871 (SD) 0.049 \\
+Rank 8 + spectrum & NCL & 80.84 (SD) 7.82 & 80.75 (SD) 7.80 & 80.86 (SD) 7.83 & 0.896 (SD) 0.059 & 0.901 (SD) 0.069 \\
+Rank 8 + spectrum & SimCLR & 76.43 (SD) 5.00 & 76.36 (SD) 4.96 & 76.44 (SD) 5.01 & 0.860 (SD) 0.049 & 0.871 (SD) 0.049 \\
+95\% train variance & NCL & 75.57 (SD) 10.58 & 75.43 (SD) 10.58 & 75.58 (SD) 10.60 & 0.817 (SD) 0.123 & 0.814 (SD) 0.167 \\
+95\% train variance & SimCLR & 86.68 (SD) 0.58 & 86.62 (SD) 0.60 & 86.71 (SD) 0.58 & 0.939 (SD) 0.008 & 0.950 (SD) 0.006 \\
+99\% train variance & NCL & 75.93 (SD) 9.31 & 75.88 (SD) 9.25 & 75.94 (SD) 9.32 & 0.855 (SD) 0.078 & 0.861 (SD) 0.089 \\
+99\% train variance & SimCLR & 87.06 (SD) 0.47 & 87.01 (SD) 0.49 & 87.08 (SD) 0.47 & 0.943 (SD) 0.006 & 0.954 (SD) 0.005 \\
+\bottomrule
+\end{tabular}
