@@ -1,0 +1,4 @@
+split,patient_groups,slice_samples
+test,37,4821
+train,1059,138399
+val,37,4761
