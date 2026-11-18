@@ -1,0 +1,12 @@
+{
+  "release": "2026-11-13",
+  "inputs": "allowlisted publication sources and aggregate outputs",
+  "raw_MRI_or_new_model_weights_included": false,
+  "notebook_outputs_cleared": true,
+  "historical_remote_files_deleted": false,
+  "scientific_experiments_rerun": false,
+  "tests": "5 synthetic functional tests passed; probe CLI dry-run passed",
+  "python_syntax": "passed",
+  "credential_pattern_scan": "passed",
+  "full_scientific_rerun": false
+}
