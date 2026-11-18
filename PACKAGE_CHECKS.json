@@ -1,12 +1,19 @@
 {
-  "release": "2026-11-13",
+  "release": "2026-11-18",
   "inputs": "allowlisted publication sources and aggregate outputs",
   "raw_MRI_or_new_model_weights_included": false,
   "notebook_outputs_cleared": true,
   "historical_remote_files_deleted": false,
   "scientific_experiments_rerun": false,
-  "tests": "5 synthetic functional tests passed; probe CLI dry-run passed",
+  "tests": "34 local tests passed; public aggregates and probe dry run passed",
   "python_syntax": "passed",
   "credential_pattern_scan": "passed",
-  "full_scientific_rerun": false
+  "full_scientific_rerun": false,
+  "notebook_output_check_scope": "numbered notebooks in the five publication batches",
+  "paper": {
+    "main_text_pages": 7,
+    "total_pages": 10,
+    "references": 50
+  },
+  "checksum_scope": "published release files and PACKAGE_CHECKS.json, using Git blob bytes"
 }

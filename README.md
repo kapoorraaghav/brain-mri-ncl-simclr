@@ -9,11 +9,9 @@ not introduce a new contrastive method, SAE architecture or clinical explanation
 
 ## Publication progress
 
-The repository is being published in five planned batches. **Batches 1 through 3 contain setup, training workflows, audit entry points,
-conditional patient-resampling code and core aggregate audit outputs.**
-The remaining historical result tables, manuscript synthesis and current paper
-belong to later batches. Paths still marked as planned are not yet executable
-entry points in this partial release. See [docs/WORKFLOW.md](docs/WORKFLOW.md).
+All five release batches are available. The current manuscript and figures are in
+[paper/current](paper/current/README.md). See [docs/WORKFLOW.md](docs/WORKFLOW.md)
+for entry points and input requirements.
 
 ## Setup and checks available now
 
@@ -45,7 +43,7 @@ audit and preservation dependencies are in their corresponding requirements file
 | Rank, AuxK, stability, retained variance and probes | `notebooks/21_*` through `25_*` | Available; review input requirements | Historical embedding bundle; AuxK model archive for stability |
 | Current feature-population audit | `scripts/feature_population_audit.py`, `notebooks/32_feature_population_audit.ipynb` | Available; review input requirements | Historical embeddings, matching SAE states and private validation covariates |
 | Patient-resampling audit diagnostics | `scripts/bootstrap_feature_budget_patients.py`, `bootstrap_null_correlations.py` | Available; requires private patient-level inputs | Saved per-slice activations and patient identities; not distributed |
-| Current manuscript and its figures | `paper/current/` | Planned for batch 5 | No patient input needed to read or compile the manuscript |
+| Current manuscript and its figures | `paper/current/` | Available | No patient input needed to read or compile the manuscript |
 
 ## Inspecting preserved exports without loading weights
 
@@ -96,7 +94,7 @@ code, not the recommended interface for a new preserved training run.
 
 ## Data, credentials and release status
 
-This batch adds no raw MRI datasets, private embedding archives or new model
+The five release batches add no raw MRI datasets, private embedding archives or new model
 weights. Obtain authorized inputs under the applicable BraTS terms and consult
 [data/README.md](data/README.md). Keep credentials in environment variables; the
 tracked `.env.example` contains an empty placeholder. Only load trusted PKLs.

@@ -1,8 +1,7 @@
 # Workflow map and input provenance
 
 This map distinguishes historical analyses from preservation reruns and the
-current feature-population audit. It describes the full planned release; batches 1 through 3 are published. The sensitivity/bootstrap helpers and core
-audit outputs are now present; later manuscript/table batches remain planned.
+current feature-population audit. It describes the full planned release; all five planned batches are published. The historical tables and current paper are available; recomputation requires the inputs listed below.
 
 ## Available in the first batch
 
