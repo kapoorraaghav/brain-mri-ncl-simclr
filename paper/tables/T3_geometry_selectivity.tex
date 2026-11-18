@@ -1,0 +1,16 @@
+\begin{tabular}{lllllll}
+\toprule
+Condition & Method & Rank (10/42/52) & Purity (\%) & P-dist. purity (\%) & PCA val. EV (\%) & Original EV (\%) \\
+\midrule
+Native & NCL & 192/192/192 & 83.99 (SD) 2.65 & 78.84 (SD) 1.83 & 100.00 (SD) 0.00 & 99.94 (SD) 0.05 \\
+Native & SimCLR & 192/192/192 & 79.87 (SD) 1.06 & 73.37 (SD) 1.28 & 100.00 (SD) 0.00 & 99.69 (SD) 0.03 \\
+Rank 8 & NCL & 8/8/8 & 83.14 (SD) 2.31 & 78.62 (SD) 1.32 & 98.45 (SD) 2.41 & 98.45 (SD) 2.41 \\
+Rank 8 & SimCLR & 8/8/8 & 82.22 (SD) 1.25 & 74.40 (SD) 1.63 & 35.02 (SD) 9.65 & 34.99 (SD) 9.66 \\
+Rank 8 + spectrum & NCL & 8/8/8 & 83.14 (SD) 2.31 & 78.62 (SD) 1.32 & 98.45 (SD) 2.41 & 98.45 (SD) 2.41 \\
+Rank 8 + spectrum & SimCLR & 8/8/8 & 81.10 (SD) 1.29 & 74.30 (SD) 1.39 & 35.02 (SD) 9.65 & 34.92 (SD) 9.53 \\
+95\% train variance & NCL & 8/3/3 & 83.31 (SD) 2.60 & 77.74 (SD) 3.60 & 96.14 (SD) 0.41 & 96.14 (SD) 0.41 \\
+95\% train variance & SimCLR & 74/60/90 & 79.61 (SD) 1.03 & 72.45 (SD) 1.49 & 94.89 (SD) 0.08 & 94.66 (SD) 0.10 \\
+99\% train variance & NCL & 11/4/6 & 84.81 (SD) 1.83 & 80.12 (SD) 2.87 & 99.08 (SD) 0.32 & 99.07 (SD) 0.31 \\
+99\% train variance & SimCLR & 95/90/121 & 79.69 (SD) 1.04 & 72.82 (SD) 1.15 & 98.98 (SD) 0.07 & 98.71 (SD) 0.09 \\
+\bottomrule
+\end{tabular}
