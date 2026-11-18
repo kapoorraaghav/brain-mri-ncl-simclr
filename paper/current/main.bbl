@@ -1,0 +1,258 @@
+\begin{thebibliography}{50}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Adebayo et~al.(2018)Adebayo, Gilmer, Muelly, Goodfellow, Hardt, and Kim}]{adebayo2018sanity}
+Adebayo, J.; Gilmer, J.; Muelly, M.; Goodfellow, I.; Hardt, M.; and Kim, B. 2018.
+\newblock Sanity Checks for Saliency Maps.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Baid et~al.(2021)Baid, Ghodasara, Mohan, Bilello, Calabrese, Colak, Farahani, Kalpathy-Cramer et~al.}]{baid2021brats}
+Baid, U.; Ghodasara, S.; Mohan, S.; Bilello, M.; Calabrese, E.; Colak, E.; Farahani, K.; Kalpathy-Cramer, J.; et~al. 2021.
+\newblock The {RSNA-ASNR-MICCAI BraTS 2021} Benchmark on Brain Tumor Segmentation and Radiogenomic Classification.
+\newblock arXiv:2107.02314.
+
+\bibitem[{Bakas et~al.(2017{\natexlab{a}})Bakas, Akbari, Sotiras, Bilello, Rozycki, Kirby, Freymann, Farahani, and Davatzikos}]{bakas2017advancing}
+Bakas, S.; Akbari, H.; Sotiras, A.; Bilello, M.; Rozycki, M.; Kirby, J.~S.; Freymann, J.~B.; Farahani, K.; and Davatzikos, C. 2017{\natexlab{a}}.
+\newblock Advancing {The Cancer Genome Atlas} glioma {MRI} collections with expert segmentation labels and radiomic features.
+\newblock \emph{Scientific Data}, 4: 170117.
+\newblock DOI: \url{10.1038/sdata.2017.117}.
+
+\bibitem[{Bakas et~al.(2017{\natexlab{b}})Bakas, Akbari, Sotiras, Bilello, Rozycki, Kirby et~al.}]{bakas2017gbmdata}
+Bakas, S.; Akbari, H.; Sotiras, A.; Bilello, M.; Rozycki, M.; Kirby, J.~S.; et~al. 2017{\natexlab{b}}.
+\newblock Segmentation Labels and Radiomic Features for the Pre-operative Scans of the {TCGA-GBM} Collection.
+\newblock The Cancer Imaging Archive [dataset].
+\newblock DOI: \url{10.7937/K9/TCIA.2017.KLXWJJ1Q}.
+
+\bibitem[{Bakas et~al.(2017{\natexlab{c}})Bakas, Akbari, Sotiras, Bilello, Rozycki, Kirby et~al.}]{bakas2017lggdata}
+Bakas, S.; Akbari, H.; Sotiras, A.; Bilello, M.; Rozycki, M.; Kirby, J.~S.; et~al. 2017{\natexlab{c}}.
+\newblock Segmentation Labels and Radiomic Features for the Pre-operative Scans of the {TCGA-LGG} Collection.
+\newblock The Cancer Imaging Archive [dataset].
+\newblock DOI: \url{10.7937/K9/TCIA.2017.GJQ7R0EF}.
+
+\bibitem[{Bardes, Ponce, and LeCun(2022)}]{bardes2022vicreg}
+Bardes, A.; Ponce, J.; and LeCun, Y. 2022.
+\newblock {VICReg}: Variance-Invariance-Covariance Regularization for Self-Supervised Learning.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Bau et~al.(2017)Bau, Zhou, Khosla, Oliva, and Torralba}]{bau2017dissection}
+Bau, D.; Zhou, B.; Khosla, A.; Oliva, A.; and Torralba, A. 2017.
+\newblock Network Dissection: Quantifying Interpretability of Deep Visual Representations.
+\newblock In \emph{IEEE Conference on Computer Vision and Pattern Recognition}.
+
+\bibitem[{Caron et~al.(2020)Caron, Misra, Mairal, Goyal, Bojanowski, and Joulin}]{caron2020swav}
+Caron, M.; Misra, I.; Mairal, J.; Goyal, P.; Bojanowski, P.; and Joulin, A. 2020.
+\newblock Unsupervised Learning of Visual Features by Contrasting Cluster Assignments.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Caron et~al.(2021)Caron, Touvron, Misra, J{\'e}gou, Mairal, Bojanowski, and Joulin}]{caron2021dino}
+Caron, M.; Touvron, H.; Misra, I.; J{\'e}gou, H.; Mairal, J.; Bojanowski, P.; and Joulin, A. 2021.
+\newblock Emerging Properties in Self-Supervised Vision Transformers.
+\newblock In \emph{IEEE/CVF International Conference on Computer Vision}.
+
+\bibitem[{Cawley and Talbot(2010)}]{cawley2010selection}
+Cawley, G.~C.; and Talbot, N. L.~C. 2010.
+\newblock On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation.
+\newblock \emph{Journal of Machine Learning Research}, 11: 2079--2107.
+
+\bibitem[{Chen et~al.(2020)Chen, Kornblith, Norouzi, and Hinton}]{chen2020simple}
+Chen, T.; Kornblith, S.; Norouzi, M.; and Hinton, G. 2020.
+\newblock A Simple Framework for Contrastive Learning of Visual Representations.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 1597--1607.
+
+\bibitem[{Chen and He(2021)}]{chen2021simsiam}
+Chen, X.; and He, K. 2021.
+\newblock Exploring Simple Siamese Representation Learning.
+\newblock In \emph{IEEE/CVF Conference on Computer Vision and Pattern Recognition}.
+
+\bibitem[{Cunningham et~al.(2023)Cunningham, Ewart, Riggs, Huben, and Sharkey}]{cunningham2023sparse}
+Cunningham, H.; Ewart, A.; Riggs, L.; Huben, R.; and Sharkey, L. 2023.
+\newblock Sparse Autoencoders Find Highly Interpretable Features in Language Models.
+\newblock arXiv:2309.08600.
+
+\bibitem[{Delafrooz~Noroozi, Puranik, and Madhow(2026)}]{delafrooznoroozi2026shaped}
+Delafrooz~Noroozi, O.; Puranik, B.; and Madhow, U. 2026.
+\newblock Shaped {SAEs}: Expanding the Toolkit for Mechanistic Interpretability.
+\newblock arXiv:2610.27375.
+
+\bibitem[{Demirel et~al.(2026)Demirel, Domin{\'e}, Maiorca, Fumero, Mondelli, and Locatello}]{demirel2026sacreg}
+Demirel, B.; Domin{\'e}, C.; Maiorca, V.; Fumero, M.; Mondelli, M.; and Locatello, F. 2026.
+\newblock $\lambda$-{JEPA}: Spectral Anti-Collapse Regularization for Self-Supervised Learning.
+\newblock arXiv:2609.35288.
+
+\bibitem[{Dosovitskiy et~al.(2021)Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and Houlsby}]{dosovitskiy2021vit}
+Dosovitskiy, A.; Beyer, L.; Kolesnikov, A.; Weissenborn, D.; Zhai, X.; Unterthiner, T.; Dehghani, M.; Minderer, M.; Heigold, G.; Gelly, S.; Uszkoreit, J.; and Houlsby, N. 2021.
+\newblock An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Efron(1979)}]{efron1979bootstrap}
+Efron, B. 1979.
+\newblock Bootstrap Methods: Another Look at the Jackknife.
+\newblock \emph{The Annals of Statistics}, 7(1): 1--26.
+
+\bibitem[{Fawcett(2006)}]{fawcett2006roc}
+Fawcett, T. 2006.
+\newblock An Introduction to {ROC} Analysis.
+\newblock \emph{Pattern Recognition Letters}, 27(8): 861--874.
+
+\bibitem[{Gao et~al.(2024)Gao, Dupr{\'e}~la Tour, Tillman, Goh, Troll, Radford, Sutskever, Leike, and Wu}]{gao2024scaling}
+Gao, L.; Dupr{\'e}~la Tour, T.; Tillman, H.; Goh, G.; Troll, R.; Radford, A.; Sutskever, I.; Leike, J.; and Wu, J. 2024.
+\newblock Scaling and evaluating sparse autoencoders.
+\newblock arXiv:2406.04093.
+
+\bibitem[{Geirhos et~al.(2020)Geirhos, Jacobsen, Michaelis, Zemel, Brendel, Bethge, and Wichmann}]{geirhos2020shortcut}
+Geirhos, R.; Jacobsen, J.-H.; Michaelis, C.; Zemel, R.; Brendel, W.; Bethge, M.; and Wichmann, F.~A. 2020.
+\newblock Shortcut Learning in Deep Neural Networks.
+\newblock \emph{Nature Machine Intelligence}, 2: 665--673.
+
+\bibitem[{Ghassemi, Oakden-Rayner, and Beam(2021)}]{ghassemi2021falsehope}
+Ghassemi, M.; Oakden-Rayner, L.; and Beam, A.~L. 2021.
+\newblock The False Hope of Current Approaches to Explainable Artificial Intelligence in Health Care.
+\newblock \emph{The Lancet Digital Health}, 3(11): e745--e750.
+
+\bibitem[{Grill et~al.(2020)Grill, Strub, Altch{\'e}, Tallec, Richemond, Buchatskaya, Doersch, Avila~Pires, Guo, Azar, Piot, Kavukcuoglu, Munos, and Valko}]{grill2020byol}
+Grill, J.-B.; Strub, F.; Altch{\'e}, F.; Tallec, C.; Richemond, P.~H.; Buchatskaya, E.; Doersch, C.; Avila~Pires, B.; Guo, Z.~D.; Azar, M.~G.; Piot, B.; Kavukcuoglu, K.; Munos, R.; and Valko, M. 2020.
+\newblock Bootstrap Your Own Latent: A New Approach to Self-Supervised Learning.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Hanley and McNeil(1982)}]{hanley1982auc}
+Hanley, J.~A.; and McNeil, B.~J. 1982.
+\newblock The Meaning and Use of the Area under a Receiver Operating Characteristic ({ROC}) Curve.
+\newblock \emph{Radiology}, 143(1): 29--36.
+
+\bibitem[{Hassanpour et~al.(2024)Hassanpour, Srivastav, Mutter, and Padoy}]{hassanpour2024collapse}
+Hassanpour, J.; Srivastav, V.; Mutter, D.; and Padoy, N. 2024.
+\newblock Overcoming Dimensional Collapse in Self-supervised Contrastive Learning for Medical Image Segmentation.
+\newblock In \emph{IEEE International Symposium on Biomedical Imaging}.
+
+\bibitem[{He et~al.(2020)He, Fan, Wu, Xie, and Girshick}]{he2020moco}
+He, K.; Fan, H.; Wu, Y.; Xie, S.; and Girshick, R. 2020.
+\newblock Momentum Contrast for Unsupervised Visual Representation Learning.
+\newblock In \emph{IEEE/CVF Conference on Computer Vision and Pattern Recognition}.
+
+\bibitem[{Jing et~al.(2022)Jing, Vincent, LeCun, and Tian}]{jing2022dimensionalcollapse}
+Jing, L.; Vincent, P.; LeCun, Y.; and Tian, Y. 2022.
+\newblock Understanding Dimensional Collapse in Contrastive Self-supervised Learning.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Karvonen et~al.(2025)Karvonen, Rager, Lin, Tigges, Bloom, Chanin, Lau, Farrell, McDougall, Ayonrinde, Till, Wearden, Conmy, Marks, and Nanda}]{karvonen2025saebench}
+Karvonen, A.; Rager, C.; Lin, J.; Tigges, C.; Bloom, J.; Chanin, D.; Lau, Y.-T.; Farrell, E.; McDougall, C.; Ayonrinde, K.; Till, D.; Wearden, M.; Conmy, A.; Marks, S.; and Nanda, N. 2025.
+\newblock {SAEBench}: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability.
+\newblock arXiv:2503.09532.
+
+\bibitem[{Kim et~al.(2018)Kim, Wattenberg, Gilmer, Cai, Wexler, Viegas, and Sayres}]{kim2018tcav}
+Kim, B.; Wattenberg, M.; Gilmer, J.; Cai, C.; Wexler, J.; Viegas, F.; and Sayres, R. 2018.
+\newblock Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors ({TCAV}).
+\newblock In \emph{International Conference on Machine Learning}, volume~80, 2668--2677.
+
+\bibitem[{Kindermans et~al.(2017)Kindermans, Hooker, Adebayo, Alber, Sch{\"u}tt, D{\"a}hne, Erhan, and Kim}]{kindermans2017reliability}
+Kindermans, P.-J.; Hooker, S.; Adebayo, J.; Alber, M.; Sch{\"u}tt, K.~T.; D{\"a}hne, S.; Erhan, D.; and Kim, B. 2017.
+\newblock The (Un)reliability of Saliency Methods.
+\newblock arXiv:1711.00867.
+
+\bibitem[{Li, Efros, and Pathak(2022)}]{li2022collapse}
+Li, A.~C.; Efros, A.~A.; and Pathak, D. 2022.
+\newblock Understanding Collapse in Non-Contrastive Siamese Representation Learning.
+\newblock In \emph{European Conference on Computer Vision}.
+
+\bibitem[{Lundberg and Lee(2017)}]{lundberg2017shap}
+Lundberg, S.~M.; and Lee, S.-I. 2017.
+\newblock A Unified Approach to Interpreting Model Predictions.
+\newblock In \emph{Advances in Neural Information Processing Systems}.
+
+\bibitem[{Makhzani and Frey(2013)}]{makhzani2013ksparse}
+Makhzani, A.; and Frey, B. 2013.
+\newblock k-Sparse Autoencoders.
+\newblock arXiv:1312.5663.
+
+\bibitem[{Menze et~al.(2015)Menze, Jakab, Bauer, Kalpathy-Cramer, Farahani, Kirby, Burren, Porz, Slotboom, Wiest et~al.}]{menze2014multimodal}
+Menze, B.~H.; Jakab, A.; Bauer, S.; Kalpathy-Cramer, J.; Farahani, K.; Kirby, J.; Burren, Y.; Porz, N.; Slotboom, J.; Wiest, R.; et~al. 2015.
+\newblock The Multimodal Brain Tumor Image Segmentation Benchmark ({BRATS}).
+\newblock \emph{IEEE Transactions on Medical Imaging}, 34(10): 1993--2024.
+\newblock DOI: \url{10.1109/TMI.2014.2377694}.
+
+\bibitem[{Nerrise et~al.(2026)Nerrise, Yin, Abbasi, Pohl, and Adeli}]{nerrise2026geosae}
+Nerrise, F.; Yin, L.; Abbasi, M.~H.; Pohl, K.~M.; and Adeli, E. 2026.
+\newblock {GeoSAE}: Geometric Prior-Guided Layer-Wise Sparse Autoencoder Annotation of Brain {MRI} Foundation Models.
+\newblock arXiv:2605.01829.
+
+\bibitem[{Olshausen and Field(1996)}]{olshausen1996sparse}
+Olshausen, B.~A.; and Field, D.~J. 1996.
+\newblock Emergence of simple-cell receptive field properties by learning a sparse code for natural images.
+\newblock \emph{Nature}, 381: 607--609.
+
+\bibitem[{Oquab et~al.(2023)Oquab, Darcet, Moutakanni, Vo, Szafraniec, Khalidov et~al.}]{oquab2023dinov2}
+Oquab, M.; Darcet, T.; Moutakanni, T.; Vo, H.; Szafraniec, M.; Khalidov, V.; et~al. 2023.
+\newblock {DINOv2}: Learning Robust Visual Features without Supervision.
+\newblock arXiv:2304.07193.
+
+\bibitem[{Paulo and Belrose(2025)}]{paulo2025differentfeatures}
+Paulo, G.; and Belrose, N. 2025.
+\newblock Sparse Autoencoders Trained on the Same Data Learn Different Features.
+\newblock arXiv:2501.16615.
+
+\bibitem[{Rajamanoharan et~al.(2024{\natexlab{a}})Rajamanoharan, Conmy, Smith, Lieberum, Varma, Kram{\'a}r, Shah, and Nanda}]{rajamanoharan2024gated}
+Rajamanoharan, S.; Conmy, A.; Smith, L.; Lieberum, T.; Varma, V.; Kram{\'a}r, J.; Shah, R.; and Nanda, N. 2024{\natexlab{a}}.
+\newblock Improving Dictionary Learning with Gated Sparse Autoencoders.
+\newblock arXiv:2404.16014.
+
+\bibitem[{Rajamanoharan et~al.(2024{\natexlab{b}})Rajamanoharan, Lieberum, Sonnerat, Conmy, Varma, Kram{\'a}r, and Nanda}]{rajamanoharan2024jump}
+Rajamanoharan, S.; Lieberum, T.; Sonnerat, N.; Conmy, A.; Varma, V.; Kram{\'a}r, J.; and Nanda, N. 2024{\natexlab{b}}.
+\newblock Jumping Ahead: Improving Reconstruction Fidelity with {JumpReLU} Sparse Autoencoders.
+\newblock arXiv:2407.14435.
+
+\bibitem[{Ribeiro, Singh, and Guestrin(2016)}]{ribeiro2016lime}
+Ribeiro, M.~T.; Singh, S.; and Guestrin, C. 2016.
+\newblock Why Should I Trust You? Explaining the Predictions of Any Classifier.
+\newblock In \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}.
+
+\bibitem[{Rudin(2019)}]{rudin2019interpretable}
+Rudin, C. 2019.
+\newblock Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.
+\newblock \emph{Nature Machine Intelligence}, 1: 206--215.
+
+\bibitem[{Saito and Rehmsmeier(2015)}]{saito2015precision}
+Saito, T.; and Rehmsmeier, M. 2015.
+\newblock The Precision-Recall Plot Is More Informative than the {ROC} Plot When Evaluating Binary Classifiers on Imbalanced Datasets.
+\newblock \emph{PLOS ONE}, 10(3): e0118432.
+
+\bibitem[{Spearman(1904)}]{spearman1904association}
+Spearman, C. 1904.
+\newblock The Proof and Measurement of Association between Two Things.
+\newblock \emph{The American Journal of Psychology}, 15(1): 72--101.
+
+\bibitem[{Sundararajan, Taly, and Yan(2017)}]{sundararajan2017axiomatic}
+Sundararajan, M.; Taly, A.; and Yan, Q. 2017.
+\newblock Axiomatic Attribution for Deep Networks.
+\newblock In \emph{International Conference on Machine Learning}.
+
+\bibitem[{Touvron et~al.(2021)Touvron, Cord, Douze, Massa, Sablayrolles, and J{\'e}gou}]{touvron2021deit}
+Touvron, H.; Cord, M.; Douze, M.; Massa, F.; Sablayrolles, A.; and J{\'e}gou, H. 2021.
+\newblock Training Data-Efficient Image Transformers \& Distillation through Attention.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine Learning}, volume 139, 10347--10357.
+
+\bibitem[{Varoquaux(2018)}]{varoquaux2018crossvalidation}
+Varoquaux, G. 2018.
+\newblock Cross-validation Failure: Small Sample Sizes Lead to Large Error Bars.
+\newblock \emph{NeuroImage}, 180: 68--77.
+
+\bibitem[{Wang and Isola(2020)}]{wang2020alignment}
+Wang, T.; and Isola, P. 2020.
+\newblock Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere.
+\newblock In \emph{International Conference on Machine Learning}.
+
+\bibitem[{Wang et~al.(2024)Wang, Zhang, Guo, and Wang}]{wang2024nonnegative}
+Wang, Y.; Zhang, Q.; Guo, Y.; and Wang, Y. 2024.
+\newblock Non-negative Contrastive Learning.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Zbontar et~al.(2021)Zbontar, Jing, Misra, LeCun, and Deny}]{zbontar2021barlow}
+Zbontar, J.; Jing, L.; Misra, I.; LeCun, Y.; and Deny, S. 2021.
+\newblock Barlow Twins: Self-Supervised Learning via Redundancy Reduction.
+\newblock In \emph{International Conference on Machine Learning}.
+
+\bibitem[{Zhang et~al.(2025)Zhang, Wang, Cui, Pan, Lei, Jegelka, and Wang}]{zhang2025beyond}
+Zhang, Q.; Wang, Y.; Cui, J.; Pan, X.; Lei, Q.; Jegelka, S.; and Wang, Y. 2025.
+\newblock Beyond Interpretability: The Gains of Feature Monosemanticity on Model Robustness.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\end{thebibliography}
