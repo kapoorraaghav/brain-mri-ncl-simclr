@@ -1,0 +1,5 @@
+Method,Variant,Validation alive,Training inactive at end,Purity (%),Patient-distinct purity (%),Reconstruction EV (%)
+NCL,Baseline,198.0 ± 37.1,924.6 ± 96.7,83.99 ± 2.65,78.84 ± 1.83,99.941 ± 0.050
+NCL,AuxK,167.8 ± 46.4,1278.4 ± 46.2,83.28 ± 3.06,78.33 ± 1.36,99.938 ± 0.054
+SimCLR,Baseline,1309.3 ± 87.0,195.3 ± 81.7,79.87 ± 1.06,73.37 ± 1.28,99.687 ± 0.032
+SimCLR,AuxK,1487.9 ± 30.0,17.7 ± 15.6,79.88 ± 1.02,73.53 ± 1.27,99.697 ± 0.030
