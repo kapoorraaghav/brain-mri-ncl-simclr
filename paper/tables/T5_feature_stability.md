@@ -1,0 +1,8 @@
+| Method | Variant | Matched val correlation | Random-match correlation | Decoder cosine | Support Jaccard | Left eligible matched r>=0.7 (%) |
+| --- | --- | --- | --- | --- | --- | --- |
+| NCL | Baseline | 0.669 ± 0.020 | 0.022 ± 0.011 | 0.374 ± 0.027 | 0.423 ± 0.050 | 55.73 ± 7.61 |
+| NCL | AuxK | 0.669 ± 0.036 | 0.022 ± 0.009 | 0.384 ± 0.027 | 0.435 ± 0.059 | 52.81 ± 9.18 |
+| SimCLR | Baseline | 0.710 ± 0.006 | 0.001 ± 0.000 | 0.653 ± 0.018 | 0.414 ± 0.011 | 61.92 ± 1.89 |
+| SimCLR | AuxK | 0.678 ± 0.009 | 0.001 ± 0.000 | 0.641 ± 0.015 | 0.397 ± 0.006 | 56.26 ± 2.06 |
+
+Match eligible features by training activation correlation on 4096 patient-balanced training slices, then assess validation. Average three SAE-seed pairs within encoder, then mean ± SD across three encoders. Coverage denominator includes left training-eligible features; full directional coverage and 0.9 sensitivity are in supplements. Correlation is not semantic identity. Pairs share dictionaries and are not independent experiments.
